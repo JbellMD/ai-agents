@@ -2,11 +2,14 @@
 Script to create and configure agents on the xpander.ai platform using the SDK.
 """
 import os
+from dotenv import load_dotenv
 from xpander_sdk import XpanderClient, LLMProvider
+
+# Load environment variables from .env file
+load_dotenv()
 
 def main():
     # Initialize the client with your API key
-    # In production, you should store this in an environment variable
     api_key = os.environ.get("XPANDER_API_KEY", "your-xpander-api-key")
     client = XpanderClient(api_key=api_key)
     
@@ -15,17 +18,13 @@ def main():
     # Create News & Market Analysis Agent
     print("\nCreating News & Market Analysis Agent...")
     try:
-        # Create the agent
+        # Create the agent with minimal parameters
         news_agent = client.agents.create(
-            name="News & Market Analysis Agent",
-            description="This agent integrates multiple data sources to provide comprehensive news analysis with market insights.",
-            agent_type="regular",
-            instructions="You are a News & Market Analysis Agent that provides comprehensive analysis of news and market trends. " +
-                        "Your goal is to identify correlations between news events and market movements, providing actionable insights."
+            name="News & Market Analysis Agent"
         )
         print(f"Created agent: {news_agent.name} with ID: {news_agent.id}")
         
-        # Update instructions with more details
+        # After creation, set the instructions
         news_agent.instructions.general = "You are a News & Market Analysis Agent that integrates data from multiple sources."
         news_agent.instructions.goal = "Provide comprehensive analysis of news events and their correlation with market movements."
         news_agent.instructions.role = "Analyze news from HackerNews, Reddit, and other sources, correlate with market data, and generate insights."
@@ -56,17 +55,13 @@ def main():
     # Create Zillow Real Estate Agent
     print("\nCreating Zillow Real Estate Agent...")
     try:
-        # Create the agent
+        # Create the agent with minimal parameters
         zillow_agent = client.agents.create(
-            name="Zillow Real Estate Agent",
-            description="This agent combines real estate data with weather information for property analysis.",
-            agent_type="regular",
-            instructions="You are a Zillow Real Estate Agent that provides property analysis and recommendations. " +
-                        "Your goal is to help users find properties that meet their criteria and provide valuable insights about those properties."
+            name="Zillow Real Estate Agent"
         )
         print(f"Created agent: {zillow_agent.name} with ID: {zillow_agent.id}")
         
-        # Update instructions with more details
+        # After creation, set the instructions
         zillow_agent.instructions.general = "You are a Zillow Real Estate Agent that combines property data with weather information."
         zillow_agent.instructions.goal = "Help users find properties that match their criteria and provide analysis on investment potential."
         zillow_agent.instructions.role = "Search for properties, analyze investment potential, and provide recommendations based on weather and market data."
