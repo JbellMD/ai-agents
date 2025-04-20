@@ -66,6 +66,9 @@ def process_agent_task(agent, openai_client):
             print(f"Executing {len(tool_calls)} tool calls:")
             for idx, tc in enumerate(tool_calls):
                 print(f"  {idx+1}. {tc.name}")
+                # Print payload for debugging
+                if hasattr(tc, 'payload') and tc.payload:
+                    print(f"     Payload: {json.dumps(tc.payload, indent=2)}")
             
             try:
                 # Run all tool calls
@@ -76,6 +79,10 @@ def process_agent_task(agent, openai_client):
                 for idx, result in enumerate(results):
                     status = "✓ Success" if result.is_success else "✗ Failed"
                     print(f"  {idx+1}. {result.function_name}: {status}")
+                    
+                    # Print result value for debugging
+                    if hasattr(result, 'result') and result.result:
+                        print(f"     Result: {result.result}")
                     
                     # Check for completion signal
                     if result.function_name == "xpfinish-agent-execution-finished":
@@ -184,7 +191,11 @@ def main():
             zillow_agent_unloaded, 
             xpander_client, 
             openai_client,
-            "Find properties in Seattle with 3+ bedrooms under $1M and analyze their investment potential."
+            """Find properties in Seattle, WA with the following criteria:
+            - Using lowercase 'apartment' for home_type
+            - 2 bedrooms minimum
+            - Under $800,000
+            Please analyze their investment potential and provide recommendations."""
         )
     else:
         print("❌ Zillow Real Estate Agent not found. Run create_agents.py first.")

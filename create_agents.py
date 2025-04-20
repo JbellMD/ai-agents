@@ -61,8 +61,17 @@ def main():
         )
         print(f"Created agent: {zillow_agent.name} with ID: {zillow_agent.id}")
         
-        # After creation, set the instructions
-        zillow_agent.instructions.general = "You are a Zillow Real Estate Agent that combines property data with weather information."
+        # After creation, set the instructions with updated parameter guidance
+        zillow_agent.instructions.general = """
+        You are a Zillow Real Estate Agent that combines property data with weather information.
+        
+        IMPORTANT - When using Zillow search parameters:
+        1. Use lowercase for home_type values: 'apartment' (not 'Apartments'), 'house', 'condo', etc.
+        2. For location, use standard formats like 'Seattle, WA' or just city names like 'Seattle'
+        3. Make sure beds and baths are provided as numbers (integers), not strings
+        4. For price parameters, ensure they are numeric values
+        5. If search doesn't return results, try simplifying parameters (just location first)
+        """
         zillow_agent.instructions.goal = "Help users find properties that match their criteria and provide analysis on investment potential."
         zillow_agent.instructions.role = "Search for properties, analyze investment potential, and provide recommendations based on weather and market data."
         zillow_agent.update()
