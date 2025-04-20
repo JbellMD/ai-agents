@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Retrieve User Created Lists",
+    "id": "67e2de500ffca9f2f3d35d69",
+    "description": "Retrieves user-created lists with details such as name, description, item count, and creation date. If the unique user account identifier is missing, run createAccessToken before anything else to obtain the required account identifier. Use this operation to support further management of movie and TV show lists for detailed analysis or content curation. "
+  },
+  {
+    "name": "Get Favorite Movies",
+    "id": "67e2de500ffca9f2f3d35d6a",
+    "description": "Retrieves the user's favorite movies including details like title, release date, and rating. If the unique account identifier is not provided, run createAccessToken before anything else to acquire the necessary account identifier. Use this operation for personalized movie recommendations, client profile analysis, and enhancing content curation. "
+  },
+  {
+    "name": "Get Rated Movies",
+    "id": "67e2de500ffca9f2f3d35d6b",
+    "description": "Retrieves movies rated by the user along with associated ratings and detailed movie information. If the unique account identifier is missing, run createAccessToken before anything else to obtain the required account identifier. Use this operation to analyze user preferences, generate personalized viewing histories, and support tailored content recommendations. "
+  },
+  {
+    "name": "Get Movie Recommendations",
+    "id": "67e2de500ffca9f2f3d35d6c",
+    "description": "Provides movie recommendations that align with the user\u2019s tastes based on past interactions. If the unique account identifier is not provided, run createAccessToken before anything else to secure the necessary account identifier. Use this operation to suggest new movies, enhance user engagement, and curate personalized movie lists. "
+  },
+  {
+    "name": "Get Movie Watchlist",
+    "id": "67e2de500ffca9f2f3d35d6d",
+    "description": "Retrieves the user's movie watchlist along with essential details for each movie. If the unique account identifier is absent, run createAccessToken before anything else to obtain the required account identifier. Use this operation to track planned movie viewings and perform analysis on user interests for future content suggestions."
+  },
+  {
+    "name": "Get Favorite TV Shows",
+    "id": "67e2de500ffca9f2f3d35d6e",
+    "description": "Fetches the user's favorite TV shows by providing comprehensive show attributes including titles, release dates, overviews, and popularity metrics. This operation is crucial for analyzing media preferences and generating tailored recommendations. It requires the unique account identifier to access the favorite TV show repository accurately. If the account identifier is missing, run createAccessToken before anything else to retrieve the necessary id from the user profile. The precise account id ensures that the operation returns consistent and personalized favorite show data for further content analysis. "
+  },
+  {
+    "name": "Get Rated TV Shows",
+    "id": "67e2de500ffca9f2f3d35d6f",
+    "description": "Retrieves TV shows rated by the user along with detailed rating information and show specifics such as title, overview, and score. This operation is key to understanding the user's opinion on various TV shows and is used for creating personalized recommendation lists and viewing history reports. It mandates the use of the unique account identifier to secure accurate rating data. If the account identifier is not provided, run createAccessToken before anything else to obtain it. The correct account id guarantees that the rated TV show data is complete and ready for subsequent analytical operations. "
+  },
+  {
+    "name": "Get TV Show Recommendations",
+    "id": "67e2de500ffca9f2f3d35d70",
+    "description": "Gets TV show recommendations based on the user's current preferences and viewing history by analyzing ratings, show details, and content trends. This operation supports the discovery of new series by delivering suggestions fine-tuned through user activity. It demands the unique account identifier for personalized recommendation generation. If the account identifier is missing, run createAccessToken before anything else to acquire the necessary id from the user's profile. With the proper account id, the recommendation process becomes more reliable, ensuring that suggestions are accurately tailored and relevant for enhancing user engagement. "
+  },
+  {
+    "name": "Get TV Show Watchlist",
+    "id": "67e2de500ffca9f2f3d35d71",
+    "description": "Retrieves the user's TV show watchlist by providing a detailed list of planned shows including titles, release dates, and descriptive overviews. This operation is instrumental for tracking planned content and scheduling future viewing, while also supporting further media planning and preference analysis. It requires the unique account identifier to access the correct watchlist data. If the account identifier is not provided, run createAccessToken before anything else to obtain the required user id from the client records. By ensuring the correct account id, the operation integrates smoothly with other tv preference features and enhances media tracking capabilities."
+  },
+  {
+    "name": "Create New User List",
+    "id": "67e2de500ffca9f2f3d35d72",
+    "description": "Creates a new user list with comprehensive list details to initiate a personalized collection of movies or TV shows. This operation accepts RAW_BODY containing all necessary attributes such as list name, description, and other relevant details essential for proper list creation and subsequent management tasks. No dependency operation is available to retrieve these details automatically. If the RAW_BODY is not provided, ensure that complete list information is manually supplied before proceeding with this request. This action is fundamental for building unique user collections and forms the basis for later operations including updates or deletions. Verify that all elements in the RAW_BODY are accurate and complete to prevent processing errors further in your workflow. "
+  },
+  {
+    "name": "Retrieve List by ID",
+    "id": "67e2de500ffca9f2f3d35d73",
+    "description": "Retrieves detailed information and all items from a specific list, including comments and media characteristics, to allow thorough examination and management. The operation depends on a precise listId parameter to fetch the correct list details. If the listId is not provided, run TMDBListManagementRetrieveAllUserCreatedLists before anything else to obtain a complete set of list identifiers and related brief details. This preliminary step ensures that the intended list is accurately selected for detailed retrieval, thereby improving data accuracy and supporting further actions such as updates or detailed analytics on the selected list. "
+  },
+  {
+    "name": "Update List Details",
+    "id": "67e2de500ffca9f2f3d35d74",
+    "description": "Updates the existing details of a user list by modifying attributes such as the name, description, or other properties provided in the RAW_BODY. This operation requires both the listId to designate the specific list and the RAW_BODY with the updated details. If the listId is missing, run TMDBListManagementRetrieveAllUserCreatedLists before anything else to acquire the correct identifier from available user lists. Likewise, if the RAW_BODY is absent, ensure that complete new list information is provided prior to execution. This update is essential for maintaining accurate and current user collections and facilitates efficient management of list properties across the system. "
+  },
+  {
+    "name": "Delete List by ID",
+    "id": "67e2de500ffca9f2f3d35d75",
+    "description": "Deletes an entire user list identified by a unique listId, permanently removing the list and all its associated items from the collection. This operation is intended for managing obsolete or undesired lists and must be used with caution because deletions are irreversible. The listId parameter is crucial; if it is not provided, run TMDBListManagementRetrieveAllUserCreatedLists before anything else to retrieve a valid list identifier from the complete set of user lists. This dependency is critical to ensure the correct list is targeted, thus preventing accidental data loss and ensuring smooth management of collection records. "
+  },
+  {
+    "name": "Clear List Items",
+    "id": "67e2de500ffca9f2f3d35d76",
+    "description": "Clears all items from a designated user list while preserving the list structure itself, resulting in an empty collection ready for new entries. This operation mandates the provision of a listId to correctly identify the target list. If the listId is not supplied, run TMDBListManagementRetrieveAllUserCreatedLists before anything else to collect the appropriate and current list identifiers. This dependency step is crucial to ensure the clearance is performed on the intended list, thereby avoiding unintended data loss. Use this function judiciously, as the permanent removal of all list items cannot be undone."
+  },
+  {
+    "name": "Check Item Presence in List",
+    "id": "67e2de500ffca9f2f3d35d77",
+    "description": "Checks whether a designated media item exists within a specific list by verifying the combination of media identifier, media type, and list identifier. This operation is crucial for preventing duplicate entries and ensuring that items are managed efficiently within the list. It requires accurate provision of the list identifier, media_id, and media_type. If the listId is not provided, run the TMDBListItemManagementRetrieveListById operation before anything else to retrieve the necessary list information. For a missing media_id or media_type, supply the values manually as no external operation is available to furnish these details. Follow the verification steps carefully to maintain a consistent and accurate record of list contents. "
+  },
+  {
+    "name": "Update Item Details in List",
+    "id": "67e2de500ffca9f2f3d35d78",
+    "description": "Updates the details of an item within a user list by requiring an existing list identifier along with a RAW_BODY that contains the updated attributes for the item. This operation facilitates modifications such as altering item order, descriptions, or other metadata crucial for accurate list curation. Both the list identifier and the updated item details must be provided to execute the update effectively. If the listId is missing, run the TMDBListManagementRetrieveAllUserCreatedLists operation before anything else to obtain current list identifiers. In the absence of a complete RAW_BODY, manually provide the updated item information. This operation ensures that any modifications are accurately reflected and that the integrity of user list data is maintained throughout the management process."
+  },
+  {
+    "name": "Add Items to List",
+    "id": "67e2de500ffca9f2f3d35d79",
+    "description": "Adds new media items to an existing user list by requiring both a valid list identifier and a RAW_BODY containing detailed information for each item to be added. This operation expands the user\u2019s collection with new entries and enhances the overall list content. All required fields, including the list identifier and item specifics, must be provided accurately. If the listId is missing, run the TMDBListManagementRetrieveAllUserCreatedLists operation before anything else to obtain a list of available identifiers. Should the RAW_BODY be absent, manually enter the item details to ensure that the new information is properly integrated into the list. This process supports dynamic list updates and ensures that the collection remains current with the user\u2019s preferences. "
+  },
+  {
+    "name": "Remove Items from List",
+    "id": "67e2de500ffca9f2f3d35d7a",
+    "description": "Removes specified items from an existing user list by utilizing a valid list identifier and a RAW_BODY containing details of the items to be removed. This operation is intended to curate and update list contents to reflect the user\u2019s current preferences effectively. It is essential to provide the list identifier to target the correct collection. If the listId is missing, run the TMDBListManagementRetrieveAllUserCreatedLists operation before anything else to fetch available list identifiers. In the case where the RAW_BODY is absent, manually supply the item removal details to complete the operation. Ensure that all information is correct to guarantee efficient removal of the designated items from the user list. "
+  }
+]

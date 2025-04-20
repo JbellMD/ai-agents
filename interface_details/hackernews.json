@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Get Ask HN Story IDs",
+    "id": "67e2dbdff6d9734e27f2cd61",
+    "description": "Retrieves a comprehensive list of identification numbers for the current Ask HN stories, which represent community-driven questions and discussion topics posted by users on Hacker News. This operation serves as a standalone method for gathering unique story IDs that can be used in subsequent actions such as retrieving detailed information with RetrieveItemDetailsById. Since no input parameters are required, you can execute this function immediately without waiting for additional data. If, however, you find that a required story identifier is absent when processing further operations, reconsider the output provided by this function. It is ideal for analyzing community engagement and tracking discussion trends in a systematic manner. "
+  },
+  {
+    "name": "Get Best Story IDs",
+    "id": "67e2dbdff6d9734e27f2cd62",
+    "description": "Retrieves a comprehensive list of identification numbers for the current best stories on Hacker News, highlighting content that has received high upvotes and significant community engagement. This operation operates independently and does not require any additional input parameters, making it an effective starting point for collecting story IDs. These identifiers can then be used in subsequent operations such as RetrieveItemDetailsById to obtain full content details and support further content curation processes. In case a necessary story identifier is not directly available later, this method provides a reliable source of data. It is particularly useful for content analysis and assembling feeds of trending articles. "
+  },
+  {
+    "name": "Get Item Details by ID",
+    "id": "67e2dbdff6d9734e27f2cd63",
+    "description": "Retrieves comprehensive details for a specified Hacker News item, including content, metadata, and additional contextual information. The operation requires an item identifier as the only input field. If the item ID is not provided, run one or more of the following operations before anything else: HackerNewsStoriesGetTopStoryIdsList, HackerNewsStoriesRetrieveAskStoryIdsList, HackerNewsStoriesGetShowStoryIdsList, HackerNewsStoriesFetchJobStoryIdsList, HackerNewsStoriesRetrieveNewStoryIdsList, or HackerNewsStoriesGetBestStoryIdsList to obtain the identifier. The detailed information returned is crucial for content analysis, discussion tracking, and metadata collection. "
+  },
+  {
+    "name": "Get Job Story IDs",
+    "id": "67e2dbdff6d9734e27f2cd64",
+    "description": "Retrieves a detailed list of identification numbers for the current job-related stories posted on Hacker News, focusing specifically on opportunities within the technology community. This operation functions as an autonomous method to obtain job story IDs without requiring any additional input parameters. Its output is crucial for users who wish to further investigate employment opportunities or analyze hiring trends by passing these IDs to operations like RetrieveItemDetailsById. If you find that any necessary detail is missing when processing job stories, this operation should be executed first to ensure complete and accurate data collection. It is an essential tool for recruiters, job seekers, and trend analysts alike. "
+  },
+  {
+    "name": "Get Current Largest Item ID",
+    "id": "67e2dbdff6d9734e27f2cd65",
+    "description": "Retrieves the current largest item identifier from Hacker News, representing the most recent creation in the system. This operation offers a starting assumption for identifying the upper bound of active items and is particularly useful when an explicit item ID is unavailable. If subsequent detailed operations cannot provide an item identifier, running this operation first will yield the most current reference ID, thereby helping to establish a baseline for further item retrieval or content monitoring tasks. "
+  },
+  {
+    "name": "Get New Story IDs",
+    "id": "67e2dbdff6d9734e27f2cd66",
+    "description": "Retrieves an extensive list of identification numbers for the most recent stories published on Hacker News, covering a diverse range of topics and categories. This operation is self-contained and does not need any extra input parameters, providing immediate access to new story IDs for further detailed retrieval using operations such as RetrieveItemDetailsById. As a standalone function, it is ideally suited for applications that require up-to-date content feeds or real-time monitoring of breaking news. Should you encounter a scenario where a necessary story identifier is missing during later processes, running this operation beforehand will guarantee that essential data is available. It is particularly beneficial for content curators and analysts focusing on emerging trends. "
+  },
+  {
+    "name": "Get Show HN Story IDs",
+    "id": "67e2dbdff6d9734e27f2cd67",
+    "description": "Retrieves an all-inclusive list of identification numbers for the current Show HN stories, which typically feature user-presented projects and innovative discoveries shared on Hacker News. This operation is designed to work independently without the need for any supplementary input parameters, thereby offering an immediate means to capture story IDs for subsequent detailed examinations with RetrieveItemDetailsById. In the event that a required story identifier is absent during further processing, ensure that this function is executed initially to capture the complete set of necessary data. It is highly useful for monitoring creative projects, community innovations, and for reviewing showcased content in a reliable and systematic manner. "
+  },
+  {
+    "name": "Get Top Story IDs",
+    "id": "67e2dbdff6d9734e27f2cd68",
+    "description": "Retrieves an exhaustive list of identification numbers for the current top stories on Hacker News, offering a curated selection of popular and trending content based on community interactions. This operation functions independently and does not need any additional input parameters, enabling users to directly obtain the crucial story IDs needed for further detailed exploration with RetrieveItemDetailsById. If you find any missing identifiers during subsequent processing steps, this operation should be run first to ensure that all essential data is captured. Its output is ideally suited for content curation, trend analysis, and assembling feeds of high-engagement articles for further scrutiny."
+  },
+  {
+    "name": "Get Recent Item and User Changes",
+    "id": "67e2dbdff6d9734e27f2cd69",
+    "description": "Retrieves the most recent updates for items and user profiles on Hacker News. This operation promptly captures a comprehensive snapshot of platform activity by collecting new posts and recording changes in user data in real time. Since no specific input fields are required for this operation, it can be invoked directly without any preliminary dependency calls. Use this operation as an essential starting point to monitor live updates, analyze content trends, and synchronize external systems with the most current information. The output supports real-time analytics and serves as a standalone mechanism for tracking dynamic changes, ensuring that subsequent processes requiring updated platform data are well-informed."
+  },
+  {
+    "name": "Get User Profile by ID",
+    "id": "67e2dbdff6d9734e27f2cd6a",
+    "description": "Fetches detailed profile information for a specific Hacker News user using their unique identifier. This operation requires the user ID to return comprehensive user data including account creation date, karma, and biography details. If the user ID is not provided, run HackerNewsItemsRetrieveItemDetailsById before proceeding to extract the necessary identifier from previously retrieved item details. Ensuring the availability of a valid user ID is essential for accurate profile analysis, reputation tracking, and user verification, all of which contribute to a structured and reliable management of user-specific information within the Hacker News community."
+  }
+]

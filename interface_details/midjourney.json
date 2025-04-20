@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Generate Portrait from Image and Text",
+    "id": "67e2de36d970657eaa489523",
+    "description": "Creates a unique portrait by integrating a user-supplied image with a creative text prompt to produce a personalized artistic output. This operation requires two fundamental leaf parameters: a valid image URL and a descriptive text prompt. If the image URL is not provided, run ParameterCustomizationConfigureImageGeneration before anything else to obtain a validated image source from prior customization outputs. Similarly, if the text prompt is missing, execute ParameterCustomizationConfigureImageGeneration to secure a detailed description that complements the visual input. Adhering to these prerequisite steps ensures that both critical elements are in place, thereby enabling the effective generation of a custom portrait that seamlessly blends visual and textual creativity."
+  },
+  {
+    "name": "Get Generated Image by Task ID",
+    "id": "67e2de36d970657eaa489524",
+    "description": "Retrieves the finalized generated image associated with a previously initiated task. This operation is designed to fetch images that have completed the generation sequence and are ready for downstream applications such as display in user interfaces, further editing, or integration into multimedia content. The only required property is TaskId, which uniquely identifies the image generation task and must be provided to ensure accurate retrieval. If TaskId isn't provided, run ImageGenerationCreateImageFromTextPrompt before anything else to secure the appropriate TaskId from the image creation process. This method is a crucial link in the overall workflow, ensuring that subsequent operations receive the necessary image data for consistent output and smooth transition between content generation and utilization. Always verify that the correct TaskId is available to maintain continuity in image processing and avoid disruptions in the integrated application flow."
+  },
+  {
+    "name": "Create Image from Text Prompt",
+    "id": "67e2de36d970657eaa489525",
+    "description": "Initiates the transformation of descriptive text into a visually compelling image using advanced generative techniques. This operation leverages a detailed Prompt that serves as the blueprint by defining the artistic style, thematic focus, and narrative elements of the final artwork. If the Prompt is not provided or lacks sufficient detail, run ParameterCustomizationConfigureImageGeneration before anything else to acquire enriched customization settings that include creative guidelines and design nuances. This dependency ensures that all essential creative instructions are in place, enabling the generation of high-quality images suitable for marketing visuals, narrative illustrations, or digital art concepts. This fundamental operation sets the stage for successful image creation and supports any subsequent tasks that depend on an accurately articulated creative concept."
+  },
+  {
+    "name": "Customize Image Generation Parameters",
+    "id": "67e2de36d970657eaa489526",
+    "description": "Configures advanced image generation parameters to enable detailed customization of output visuals by adjusting multiple generation settings. This operation requires precise values including aspect ratio height, aspect ratio width, chaos, character reference URL, character weight, image prompt URL, image weight, negative prompt, second text prompt, second text prompt weight, style reference URL, style weight, stylize, text generation mode, text prompt, tile, and weird factor. If text prompt isn't provided, run ImageGenerationCreateImageFromTextPrompt before anything else to retrieve the basic text prompt required for initializing the customization process. Use this operation to fine-tune image creation for artistic or professional projects where accurately set parameters lead to highly tailored visual outcomes."
+  }
+]

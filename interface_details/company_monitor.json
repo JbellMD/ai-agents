@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Search Organizations by Query Term",
+    "id": "67eb9e2f4babe4099d8ee23f",
+    "description": "Retrieves a comprehensive list of organizations that match the provided search term. This operation is designed for effective organization management by returning essential details including the unique organization identifier, the organization name, and a brief description. A valid search query is required to filter and select the appropriate organizations. If the search query is not provided, run ExternalOrganizationLookup before anything else to obtain a valid search term that can be used for this operation. Furthermore, if the unique organization identifier is not available from the response and is needed for subsequent processing, run ExternalOrganizationIdSearch to retrieve the missing identifier. This operation underpins robust data retrieval and smooth workflow initiation by ensuring that all critical organization details are available."
+  },
+  {
+    "name": "Get Organization Details by Identifier",
+    "id": "67eb9e2f4babe4099d8ee240",
+    "description": "Retrieves detailed information for a specific organization using its unique identifier. This operation returns key data including the official organization name, a concise description, founding year, headquarters location, and industry sector. It is critical for acquiring in-depth insights that support strategic decision making and further data analysis. If the organization identifier is not provided, run CrunchbaseSearchAutocompleteGetOrganizationsByQuery before anything else to obtain the required identifier from a broader search. Adhering to this dependency ensures that accurate and complete organization records are available for use in subsequent system integrations. The operation is part of an enterprise-level organization-management suite and is optimized for reliable and comprehensive data retrieval."
+  }
+]

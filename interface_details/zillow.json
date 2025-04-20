@@ -1,0 +1,172 @@
+[
+  {
+    "name": "Create Zillow Search URL",
+    "id": "67e2e0c0f6d9734e27f2cd76",
+    "description": "This operation constructs a dynamic search URL for Zillow property listings by integrating custom property filters with available location information. In practice, while no input field is absolutely mandatory, providing detailed criteria such as price range, property type, and neighborhood characteristics significantly improves the accuracy and relevance of the generated URL. If the essential geographic details or location identifiers are not provided, run ZillowLocationServiceGetSuggestionsBasedOnQuery before anything else to obtain the required location suggestions. This operation is pivotal for establishing a foundation for subsequent tasks like retrieving detailed property listings from preconfigured URLs, which in turn supports data analysis and enhanced search experiences. Ensuring that all unique filter specifications and geographic details are properly compiled is critical to achieving optimal search performance and robust data retrieval. "
+  },
+  {
+    "name": "Fetch Building Details and Amenities",
+    "id": "67e2e0c0f6d9734e27f2cd77",
+    "description": "Retrieves detailed amenity and attribute information for a building. This operation obtains critical data such as building name, type, location, photo count, and special offers. It is especially beneficial for property managers, real estate investors, and applications that analyze multi-unit residential complexes. If essential identifiers like lot ID, building ID, or URL are not provided, run ZillowPropertySearchRetrieveDetailedInfoWithFilters before anything else to acquire these details. Ensure all unique building identifiers are available to avoid incomplete results and to support thorough inspections, competitive analysis, or market research. "
+  },
+  {
+    "name": "Fetch Property Image URLs",
+    "id": "67e2e0c0f6d9734e27f2cd78",
+    "description": "Fetches image URLs for a property using its Zillow Property ID (ZPID). This operation returns the set of image URLs associated with the property, enabling visual display and enhanced property comparisons in your applications. The required field is the Zillow Property ID (ZPID), which uniquely identifies the property within the system. If the ZPID is not provided, run ZillowPropertySearchRetrieveDetailedInfoWithFilters before anything else to locate the property details that include the necessary ZPID. Ensuring that this unique identifier is acquired first is crucial for the proper execution of this operation and for achieving accurate image retrieval. Follow the recommended dependency workflow to integrate property listings with image data effectively. "
+  },
+  {
+    "name": "Fetch Lender Details by Screen Name",
+    "id": "67e2e0c0f6d9734e27f2cd79",
+    "description": "Fetches detailed lender information using the provided screen name. The screen name is essential for identifying the correct lender and retrieving comprehensive details about their profile, credentials, and service history. If the screen name isn't provided, run ZillowLenderManagementSearchLendersByLocationAndName before anything else to locate and confirm the lender's screen name. This operation is designed to support due diligence, facilitate mortgage application reviews, and enable detailed comparisons between different lenders. Ensure that all necessary identification data is collected beforehand to guarantee accurate and complete lender records within your workflow. "
+  },
+  {
+    "name": "Retrieve Lender Reviews by ID",
+    "id": "67e2e0c0f6d9734e27f2cd7a",
+    "description": "Retrieves customer reviews and performance insights for a specified lender by using the unique lender ID. The lender ID is fundamental for accessing detailed review metrics that help in comparing service experiences and assessing overall reputation. If the lender ID isn't provided, run ZillowLenderManagementSearchLendersByLocationAndName before anything else to obtain and validate the required lender identifier. This operation supports informed decision-making by gathering user feedback and analyzing performance data, which is crucial for risk assessment, service comparisons, and building reliable lender profiles. "
+  },
+  {
+    "name": "Search Lenders by Location and Name",
+    "id": "67e2e0c0f6d9734e27f2cd7b",
+    "description": "Conducts a targeted search for lenders based on location criteria such as city, state, or ZIP code, and optionally filters by name. The location parameter is critical for narrowing down the search to lenders licensed in the desired area. If the location details aren't provided, run ZillowLocationServiceProvideSuggestionsBasedOnQuery before anything else to secure accurate location data. This search operation serves as a vital preliminary step, enabling users to obtain essential geographical information that supports subsequent operations, ensures precise lender filtering, and bolsters overall data integrity in financial evaluations. "
+  },
+  {
+    "name": "Provide Location Suggestions",
+    "id": "67e2e0c0f6d9734e27f2cd7c",
+    "description": "Provides location suggestions based on a search query that can include state, county, neighborhood, city, or street names to support property search refinement and market analysis. This operation depends on the 'q' parameter which must contain a clear and descriptive location term to generate accurate suggestions. The response includes various geographic details such as city names, county information, and potential region identifiers. If the search query is not provided, ensure that you supply a descriptive location keyword from reliable data sources before proceeding. Use this operation as an initial step in workflows that require detailed location data for further geographic or market-based queries. "
+  },
+  {
+    "name": "Retrieve Geographic Boundary by ZIP Code",
+    "id": "67e2e0c0f6d9734e27f2cd7d",
+    "description": "Retrieves geographic boundary data for a specified US ZIP code, enabling map-based visualizations and detailed regional market analysis. This operation depends on the 'zip' parameter, which must be a valid US ZIP code to accurately determine map boundaries and related geographic details. If the ZIP code is not provided, run ZillowLocationServiceProvideSuggestionsBasedOnQuery before anything else to obtain the necessary geographic identifiers including potential ZIP codes from location suggestions. Use these details to supply the correct ZIP code, ensuring accurate and effective retrieval of geographic boundaries for property search interfaces and market evaluation purposes."
+  },
+  {
+    "name": "Get Market Data by Location and Filters",
+    "id": "67e2e0c0f6d9734e27f2cd7e",
+    "description": "Fetches comprehensive market data for a specified location, enhanced through optional filters to refine analyses of local real estate trends and property statistics. The operation mandates the provision of a unique resource identifier derived from earlier location data retrieval efforts. If the resource identifier is not provided, run the ZillowMarketInsightsRetrieveLocationDataByCityOrZip operation before anything else to obtain the necessary location reference details. In cases where the resource identifier remains absent, the subsequent data extraction might be compromised. This operation is vital for segmenting market data accurately, performing property comparisons, monitoring trend shifts, and supporting detailed market segmentation analyses. Ensure that the required identifier is supplied to achieve accurate and efficient market evaluation. "
+  },
+  {
+    "name": "Retrieve Location Data by City or ZIP",
+    "id": "67e2e0c0f6d9734e27f2cd7f",
+    "description": "Retrieves detailed market location data based on a provided city name or ZIP code, serving as the cornerstone for subsequent market evaluations. The operation requires a location parameter that defines the geographical area of interest. If the location parameter is not provided, run the ZillowLocationServiceProvideSuggestionsBasedOnQuery operation before proceeding to obtain relevant location suggestions that include key identifiers like city, county, or state. This step is crucial for structuring further market queries by ensuring that subsequent operations receive accurate and validated geographic details. The operation supports advanced market segmentation and ensures data integrity for comprehensive analyses while facilitating precise targeting in market assessments. "
+  },
+  {
+    "name": "Retrieve Mortgage Rates for Programs",
+    "id": "67e2e0c0f6d9734e27f2cd80",
+    "description": "Retrieves current mortgage rates for specified loan programs, enabling a clear comparison of different borrowing options. This operation requires the provision of a loan program as its essential input, which determines the accuracy of the rate quotes returned. It supports users in performing detailed loan cost estimations and analyzing trends for informed decision making. If the required loan program information is not provided, ensure that you obtain valid program details from an appropriate source before using this operation. Furthermore, if location-specific rate details are desired and the necessary state information is missing, run ZillowLocationServiceGetSuggestionsBasedOnQuery before anything else to procure the state data required for precise geographic rate comparisons."
+  },
+  {
+    "name": "Verify API Connectivity",
+    "id": "67e2e0c0f6d9734e27f2cd81",
+    "description": "This operation is designed to verify the connectivity and availability of the Zillow API server, serving as an initial diagnostic check before engaging in more complex operations. It quickly assesses whether the API endpoint is responsive and capable of supporting further data transactions, all without requiring any specific input fields. Running this operation as the first step helps establish a stable communication channel and assists in the early identification of potential network-related issues. In scenarios where extended connectivity verification is needed, additional diagnostic steps may be executed sequentially. By confirming that the server is fully operational, users can confidently proceed with advanced queries and data retrieval processes. This essential verification step supports robust application performance and minimizes downtime through early detection of connectivity challenges."
+  },
+  {
+    "name": "Retrieve Price and Tax History",
+    "id": "67e2e0c0f6d9734e27f2cd82",
+    "description": "Retrieves historical information on property prices and tax records, delivering essential insights for property valuation and long-term trend analysis. The operation requires at least one definitive property identifier, either a unique ZPID or a valid property URL, to accurately fetch historical records. If neither identifier is provided, run the ZillowPropertySearchRetrieveDetailedInfoWithFilters operation before execution to obtain the necessary property details. Failure to supply a valid identifier results in incomplete data retrieval and may impair the analysis of price and tax trends. This operation consolidates historical data to support informed investment decisions and detailed market assessments, making it indispensable for real estate valuation and tax planning. "
+  },
+  {
+    "name": "Get Comprehensive Property Details by ZPID",
+    "id": "67e2e0c0f6d9734e27f2cd83",
+    "description": "Retrieves exhaustive property details using a Zillow property identifier (zpid), presenting key metrics including address, pricing, bedrooms, bathrooms, and square footage. This operation is crucial for accurate property valuation, market trend analysis, and comprehensive comparisons among listings. If the zpid is missing, run ZillowPropertySearchRetrieveDetailedInfoWithFilters before anything else to supply the required identifier. The detailed output enhances informed decision-making and supports real estate professionals and investors in performing meticulous property assessments. "
+  },
+  {
+    "name": "Find Properties Near Coordinates",
+    "id": "67e2e0c0f6d9734e27f2cd84",
+    "description": "Locates properties within a defined search radius around provided geographic coordinates. Both latitude and longitude are essential inputs that serve as the central point for the search. If these coordinate values are missing, run ZillowLocationServiceProvideSuggestionsBasedOnQuery before anything else to secure precise location details including coordinate data. This operation is ideal for proximity-based property searches, facilitating local market analysis and discovery of real estate near key points of interest within the property-search framework. "
+  },
+  {
+    "name": "Get Property Details by MLS Number",
+    "id": "67e2e0c0f6d9734e27f2cd85",
+    "description": "Retrieves property details by leveraging an MLS number, integrating MLS-specific information with Zillow data for a complete property overview. This operation provides valuable insights into property features and transactional history, which is essential for real estate agents and brokers. If the MLS number is not provided, run ZillowPropertySearchRetrieveDetailedInfoWithFilters before anything else to obtain the necessary MLS data. The acquired information supports effective market analysis and comparative valuations for reliable property assessments. "
+  },
+  {
+    "name": "Find Properties Within Polygon Area",
+    "id": "67e2e0c0f6d9734e27f2cd86",
+    "description": "Finds properties situated within a geographic area delineated by a polygon. The polygon coordinates, which must form a closed shape by duplicating the first and last pair, are mandatory for this search. If the polygon data is missing, run ZillowLocationServiceRetrieveGeographicBoundaryByZipCode before anything else to obtain necessary boundary details. This operation supports detailed, area-specific property searches and market analysis by enabling users to define custom search regions with precision. "
+  },
+  {
+    "name": "Find Comparable Properties",
+    "id": "67e2e0c0f6d9734e27f2cd87",
+    "description": "Retrieves comparable property information to support in-depth market evaluation and strategic pricing decisions. This operation examines key property indicators including a unique property identifier, a street address, or a property URL to generate relevant comparisons. It leverages verified listings and geolocation data to ensure precision in comparative market analysis and support appraisal accuracy. If the unique property identifier, street address, or property URL is not provided, run ZillowPropertySearchRetrieveDetailedInfoWithFilters before anything else to obtain these crucial details and ensure consistency for subsequent operations. The procedure enhances investment appraisal, buyer matching, and market trend evaluations with verified and reliable data. "
+  },
+  {
+    "name": "Perform Detailed Filters Property Search",
+    "id": "67e2e0c0f6d9734e27f2cd88",
+    "description": "Searches properties with detailed filters and returns comprehensive property information including addresses, bedroom and bathroom counts, pricing, listing status, property type, and additional market metrics. Although this operation does not require specific input fields to run directly, it forms the cornerstone for obtaining critical property parameters needed by follow\u2010up tasks. If essential location details such as geographic coordinates or precise address information are not provided, run ZillowLocationServiceGetSuggestionsBasedOnQuery before proceeding to secure the required regional data. Furthermore, this operation supports market analysis by delivering vital features that inform property management decisions and neighborhood evaluations, thereby enabling a structured workflow for subsequent operations. "
+  },
+  {
+    "name": "Calculate Rent Estimate",
+    "id": "67e2e0c0f6d9734e27f2cd89",
+    "description": "Calculates rent estimates for a property by analyzing its classification and geographic attributes to generate low, median, and high rent values along with comparable rental figures. This operation is designed for landlords, property managers, and investors to support informed rental pricing decisions using current market trends and property-specific data. The required field is the property type, which must be one of the specified options (e.g., SingleFamily, MultiFamily, Apartment, Condo, Townhouse, Manufactured, Lot, Land), while accurate location details are essential for precise computation. If the property type is missing, supply it directly; if location details are not provided, run ZillowLocationServiceGetSuggestionsBasedOnQuery before anything else to obtain the necessary geographic data. Ensure all input data is validated to maintain consistency and accuracy throughout the estimation process. "
+  },
+  {
+    "name": "Fetch Listings by Pre-Configured URL",
+    "id": "67e2e0c0f6d9734e27f2cd8a",
+    "description": "Fetches property listings using a pre-configured Zillow search URL that encapsulates complex search criteria. A complete and valid search URL is required to execute this operation effectively. If the URL is not available, run ZillowUtilityFunctionsCreateSearchUrlByLocationAndFilters before anything else to generate a fully qualified search URL with all optimal parameters. This function is vital for retrieving specific property listings, integrating advanced search workflows, and ensuring that the results are finely tuned to user-defined market analysis requirements."
+  },
+  {
+    "name": "Find Similar Rental Properties",
+    "id": "67e2e0c0f6d9734e27f2cd8b",
+    "description": "Locates rental properties exhibiting similarities to a given reference property, aiding effective rental market analysis and competitive pricing strategy formulation. This operation focuses on identifying critical rental indicators such as a unique property identifier or a property URL to pinpoint comparable rental options. If the property identifier or property URL is missing, run ZillowPropertySearchRetrieveDetailedInfoWithFilters before anything else to acquire these essential details. By integrating comprehensive rental market trends and reliable data, this service assists property managers, landlords, and tenants in optimizing rental listings and ensuring accurate market comparisons for informed decision making. "
+  },
+  {
+    "name": "Find Similar Properties",
+    "id": "67e2e0c0f6d9734e27f2cd8c",
+    "description": "Searches for properties that share significant similarities with a reference property, serving as an essential tool for evaluating investment potential and exploring alternative options. The operation relies on key data points like a unique property identifier or a property URL to perform accurate comparisons. If these required parameters are not provided, run ZillowPropertySearchRetrieveDetailedInfoWithFilters before anything else to retrieve the necessary property details. Leveraging advanced filtering techniques and verified datasets, this function offers essential insights for market competition analysis, property recommendations, and strategic real estate investments, thereby facilitating reliable decision making. "
+  },
+  {
+    "name": "Find Similar Recent Sales",
+    "id": "67e2e0c0f6d9734e27f2cd8d",
+    "description": "Finds recently sold properties that closely match specified criteria, providing critical insights into recent market activity and supporting precise appraisal evaluations. This operation utilizes essential indicators such as a unique property identifier or a property URL to identify relevant sales data. If these key parameters are missing, run ZillowPropertySearchRetrieveDetailedInfoWithFilters before anything else to obtain comprehensive property details. By analyzing aggregated data from recent transactions, this service underpins pricing adjustments, market valuation support, and strategic planning in property sales, ensuring efficient and reliable assessments for real estate professionals."
+  },
+  {
+    "name": "Estimate Property Value by Specs",
+    "id": "67e2e0c0f6d9734e27f2cd8e",
+    "description": "Estimates property value based on detailed property characteristics and location information to deliver a quick and reliable valuation. This operation is valuable for preliminary assessments, investment analysis, and pricing decisions by comparing similar properties and evaluating individual features. The required field is the property type, which categorizes the property (for example, SingleFamily or Condo), and precise location details are critical for accurate value estimation. If the property type is not provided, it must be included as an input parameter; if location details are missing, run ZillowLocationServiceGetSuggestionsBasedOnQuery before executing this operation to gather the necessary geographic information. Follow these steps to ensure comprehensive market analysis and robust property valuation. "
+  },
+  {
+    "name": "Get Historical Listing Prices",
+    "id": "67e2e0c0f6d9734e27f2cd8f",
+    "description": "Fetches historical listing price data for properties in a designated area to enable in-depth analysis of market pricing trends over time. The operation requires at least one key property identifier\u2014be it a ZPID, full address, or property URL\u2014to accurately locate historical pricing records. If none of these identifiers is provided, run the ZillowPropertySearchRetrieveDetailedInfoWithFilters operation prior to this call to acquire the essential property details. This function is critical for competitive pricing analysis, forecasting market trends, and assessing property value shifts, thereby ensuring that subsequent market decisions are firmly based on robust historical data. Ensure that the correct property identifier is supplied for error-free data retrieval and comprehensive analysis. "
+  },
+  {
+    "name": "Retrieve Historical Local Home Values",
+    "id": "67e2e0c0f6d9734e27f2cd90",
+    "description": "Retrieves extensive historical data on local home values, offering valuable insights into long-term real estate trends and neighborhood comparisons. The operation necessitates the provision of a property identifier, such as a ZPID, a complete address, or a property URL, in order to accurately fetch historical home value records. If this identifier is missing, run the ZillowPropertySearchRetrieveDetailedInfoWithFilters operation before proceeding to obtain the necessary property details. This operation is fundamental for understanding localized market performance, identifying valuation trends over time, and making well-informed investment decisions. It underpins detailed market segmentation and comparative analysis across different communities, ensuring that subsequent evaluations are based on reliable and enriched data sets. "
+  },
+  {
+    "name": "Retrieve Historical Local Rental Rates",
+    "id": "67e2e0c0f6d9734e27f2cd91",
+    "description": "Retrieves historical rental rate data for a specified location, providing critical insights into past rental trends that inform competitive pricing and investment strategies. The operation requires a valid property identifier, which may be expressed as a ZPID, a property address, or a property URL, to access comprehensive rental history records. If the identifier is not provided, run the ZillowPropertySearchRetrieveDetailedInfoWithFilters operation before this call to secure the required property information. This function supports detailed analysis of rental market dynamics, assisting in the formulation of pricing strategies and property management decisions. Ensuring the availability of the appropriate property identifier guarantees that the retrieved rental data is comprehensive and reliable for subsequent market evaluations."
+  },
+  {
+    "name": "Retrieve Historical Tax Assessments",
+    "id": "67e2e0c0f6d9734e27f2cd92",
+    "description": "Retrieves historical tax assessment information for a property to help analyze tax trends and estimate future liabilities. This operation is crucial for tax planning, investment analysis, and understanding ownership costs by returning historical data linked to property-specific tax assessments. It requires at least one identifying detail such as property ID, physical address, or property URL. If none of these identifiers are provided, run ZillowPropertySearchRetrieveDetailedInfoWithFilters before anything else to obtain the required property details. Ensure that accurate and complete identifiers are available to facilitate reliable extraction of past tax assessment records for effective financial planning. "
+  },
+  {
+    "name": "Get Historical Tax Paid Records",
+    "id": "67e2e0c0f6d9734e27f2cd93",
+    "description": "Fetches detailed records of historical property tax payments to support due diligence and financial analysis over time. This operation assists in understanding past tax expenses, verifying payment history, and estimating future tax liabilities, which are essential for property transactions and investment decisions. It mandates that at least one of the following be provided: property ID, address, or property URL. If these identifying details are missing, run ZillowPropertySearchRetrieveDetailedInfoWithFilters before proceeding to retrieve the necessary property information. Adhering to these guidelines ensures robust historical tax data collection and strengthens financial planning related to property ownership. "
+  },
+  {
+    "name": "Get Zestimate Percentage Changes",
+    "id": "67e2e0c0f6d9734e27f2cd94",
+    "description": "Fetches historical percentage changes in Zestimate values for a property to analyze valuation trends and market fluctuations over time. This operation is particularly useful for tracking rapid shifts in property value and for investment analysis, enabling users to assess property appreciation rates accurately. It requires at least one of the following identifiers: property ID, address, or property URL. If these details are not provided, run ZillowPropertySearchRetrieveDetailedInfoWithFilters before initiating this operation to secure the required property information. Following these recommendations contributes to a thorough understanding of market performance and supports informed investment strategy formulation. "
+  },
+  {
+    "name": "Get Walk, Transit, and Bike Scores",
+    "id": "67e2e0c0f6d9734e27f2cd95",
+    "description": "Retrieves walk, transit, and bike scores for a property location, offering vital insights into neighborhood accessibility and transit conveniences. This operation depends on the provision of a unique property identifier, namely ZPID, to return accurate scores and relevant descriptive information regarding walkability, transit options, and cycling infrastructure. If the property identifier is not provided, run ZillowPropertySearchRetrieveDetailedInfoWithFilters before initiating this operation to obtain the necessary ZPID. The detailed evaluation metrics provided here assist in comprehensive property assessments, support location-based decision making, and enhance listings by offering a clear picture of neighborhood characteristics for effective property management."
+  },
+  {
+    "name": "Get Property Zestimate Value",
+    "id": "67e2e0c0f6d9734e27f2cd96",
+    "description": "Retrieves the current Zestimate, an estimated property value figure, to aid in market analysis and investment decision-making. This operation provides a quick valuation derived from extensive property data and recent market conditions, vital for comparing property values. It requires one of the key identifiers: property ID, address, or property URL. If none of these are supplied, run ZillowPropertySearchRetrieveDetailedInfoWithFilters before anything else to obtain the necessary property details. Ensuring that these inputs are complete is critical for generating a reliable Zestimate and for supporting accurate property valuation across diverse geographic areas. "
+  },
+  {
+    "name": "Retrieve Historical Zestimates",
+    "id": "67e2e0c0f6d9734e27f2cd97",
+    "description": "Fetches historical Zestimate values for a property over time to support long-term market trend analysis and investment assessment. This operation delivers insights into property value fluctuations and seasonal trends, assisting in forecasting and strategic planning. It requires at least one identifying parameter, such as a property ID, physical address, or property URL. If these identifiers are not provided, run ZillowPropertySearchRetrieveDetailedInfoWithFilters before executing this operation to secure the needed property data. Meticulous adherence to input requirements ensures the extraction of comprehensive historical valuation records and underpins robust investment analysis."
+  }
+]

@@ -1,0 +1,132 @@
+[
+  {
+    "name": "Retrieve Analysis Details",
+    "id": "67e2de27d970657eaa489500",
+    "description": "Fetches comprehensive details of a specific analysis including metadata, author insights, key analytic points, and market impact data. This operation delivers in\u2010depth research content that supports thorough evaluation and informed decision-making in financial analysis. The required parameter is the analysis identifier provided from a preceding operation. If the analysis identifier is not supplied, run \"SeekingAlphaAnalysisListAvailableAnalyses\" before anything else to obtain this unique value from the available research listings. Before initiating this request, ensure that the analysis identifier is derived from a validated source so that complete and accurate detail retrieval is achieved for further evaluations. "
+  },
+  {
+    "name": "List Analyses",
+    "id": "67e2de27d970657eaa489501",
+    "description": "Lists expert analyses associated with a given stock symbol by gathering recent market summaries and opinions essential for investment decisions. This operation extracts aggregated research data and insights from financial experts. The mandatory input is the stock symbol, which drives the query for relevant analyses. If the stock symbol is missing, run \"AutoCompleteSymbolsAndQueries\" before proceeding to accurately determine the appropriate symbol. By ensuring that the symbol is correctly identified through this dependency, users can seamlessly retrieve a broad spectrum of market analyses to support informed investment strategies. "
+  },
+  {
+    "name": "Get Analysis Details",
+    "id": "67e2de27d970657eaa489502",
+    "description": "Retrieves exhaustive details for a specific analysis including extensive content, author recommendations, and supporting financial data. This operation is intended to provide an in\u2010depth view of an analysis, making it critical for users who require detailed insight into market trends and expert opinions. The essential input is the analysis identifier, typically obtained from a previous listing operation. If the analysis identifier is absent, run \"SeekingAlphaAnalysisListAvailableAnalyses\" before initiating this call to secure the correct reference identifier. Ensuring this dependency is met guarantees that the operation returns complete and precise analysis details for subsequent review. "
+  },
+  {
+    "name": "List Available Analyses",
+    "id": "67e2de27d970657eaa489503",
+    "description": "Lists all available analyses for a specified stock symbol by returning a comprehensive collection of research data, including analysis identifiers and expert opinions. This operation offers an aggregated overview that is necessary for further detailed analysis. The required parameter is the stock symbol, which serves as the search key. If the stock symbol is not provided, run \"AutoCompleteSymbolsAndQueries\" before anything else to acquire the correct symbol identifier. By first obtaining this vital information, you ensure that the subsequent retrieval of available analyses is both accurate and exhaustive, thereby supporting well-informed financial decision-making."
+  },
+  {
+    "name": "Retrieve Article Details",
+    "id": "67e2de27d970657eaa489504",
+    "description": "Retrieves detailed information regarding a specific article and provides comprehensive data including author information, publication date, full text, and critical metadata that supports thorough market analysis and news evaluation. The unique article ID is absolutely required to access this information. If the article ID is not provided, run ListArticlesBySymbol before anything else to obtain the necessary article identifier. This dependency ensures that all essential input is gathered and that subsequent calls receive valid data. It is important to execute this preparatory step to secure proper article identification, thereby guaranteeing accurate data retrieval for advanced analytical workflows and decision-making processes related to market trends and corporate communications. "
+  },
+  {
+    "name": "Retrieve Comment Contents",
+    "id": "67e2de27d970657eaa489505",
+    "description": "Fetches comprehensive content for specific comments associated with an article, offering valuable insights into user discussions and investor sentiment. This operation requires two critical inputs: the article ID, which identifies the target article, and one or more comment IDs that pinpoint the precise comment entries. If the article ID is missing, run ListArticlesBySymbol before anything else to retrieve the corresponding article identifier. If the comment IDs are not provided, execute the designated comments listing operation beforehand to collect the necessary comment identifiers. Following these dependency steps ensures that all vital information is secured prior to using this function, thereby maintaining data integrity and enabling effective analysis of market reactions and engagement trends."
+  },
+  {
+    "name": "Retrieve Day Watch List",
+    "id": "67e2de27d970657eaa489506",
+    "description": "Retrieves a curated list of stocks to watch for the day. This operation gathers an extensive overview of key market movers including the most active stocks, top gainers, and top losers, providing a comprehensive snapshot useful for early market analysis and decision-making. It delivers essential market summary data without requiring any input fields, enabling immediate access to vital stock identifiers and performance metrics that may be used to support subsequent analytical operations. Use this operation as an initial step to obtain a broad market perspective and to guide further actions in monitoring and managing trading opportunities effectively. Its output can serve as baseline information in integrated market-data workflows. "
+  },
+  {
+    "name": "Get Dividend Investing Info",
+    "id": "67e2de27d970657eaa489507",
+    "description": "Fetches current dividend investing information by providing detailed insights into upcoming ex-dividend dates, trending dividend stocks, and recent dividend increases. This operation is designed especially for dividend-focused investors seeking timely and actionable data that supports investment decisions centered around dividend yield trends. No input fields are required, ensuring that users can promptly access comprehensive dividend information. The response data aids in further analysis and can be used to cross-reference with other market evaluations. It is highly recommended for establishing a dividend investment strategy and for integrating dividend data into broader portfolio management processes. "
+  },
+  {
+    "name": "Fetch Equity Information",
+    "id": "67e2de27d970657eaa489508",
+    "description": "Fetches equity information for a specific category of stocks by requiring a filter category input chosen from the allowed set (us-equity-markets, us-equity-sectors, us-equity-factors, global-equity, or countries-equity). This operation delivers an in-depth overview of various market segments, enabling detailed analysis of trends, sector performance, and market dynamics. If the filter category is not provided, supply a valid category value as there is no alternate operation to automatically retrieve this field. The returned data serves as a critical resource for investors and analysts looking to tailor their market strategies according to specific equity segments, thereby facilitating targeted and informed investment decisions. "
+  },
+  {
+    "name": "Check Market Open Status",
+    "id": "67e2de27d970657eaa489509",
+    "description": "Checks the current open or closed status of the market while providing information on the next market open and close times in a timely and reliable manner. This operation is essential for users planning trading activities and strategic market interventions, as it delivers real-time market operating conditions without requiring any input parameters. It offers a clear status snapshot along with scheduling details that help in aligning trade execution with market liquidity. Use this operation as a preliminary check to confirm market availability and to schedule further market data inquiries or trades based on the detailed timing information provided in its output. "
+  },
+  {
+    "name": "Fetch Realtime Prices",
+    "id": "67e2de27d970657eaa48950a",
+    "description": "Retrieves real-time prices for specified stock symbols by mandating the input of a comma-separated list of symbols. This operation is crucial for obtaining the most current pricing data necessary for rapid market analysis and timely decision-making. If the symbols input is not provided, run SeekingAlphaSearchAutoCompleteSymbolsAndQueries before anything else to obtain the accurate stock symbols needed for this request. The response includes up-to-date price information, timestamps, and related market details that support fast trading actions and comprehensive financial analysis, ensuring that users base their decisions on the latest available data. "
+  },
+  {
+    "name": "Fetch Realtime Quotes",
+    "id": "67e2de27d970657eaa48950b",
+    "description": "Retrieves real-time stock quotes for specified symbols by requiring the SA IDs of the target stocks. This operation delivers essential market metrics such as price changes, trading volume, and additional detailed indicators necessary for precise and in-depth market analysis. If the SA IDs are not provided, run SeekingAlphaSearchAutoCompleteSymbolsAndQueries before initiating this operation to obtain the valid SA identifiers. The resulting data supports dynamic decision-making processes, enabling users to monitor market movements and execute trades based on accurate, real-time information, which is critical for maintaining competitive advantage in volatile trading environments. "
+  },
+  {
+    "name": "List Articles By Symbol",
+    "id": "67e2de27d970657eaa48950c",
+    "description": "Retrieves articles related to a specific stock symbol. This operation queries comprehensive financial databases to return the latest news, in-depth market analysis, and detailed report summaries for a given company. The required input is the unique stock symbol that identifies the target company. If the symbol is not provided, run SeekingAlphaSearchAutoCompleteSymbolsAndQueries before anything else to obtain the correct ticker through auto-completion suggestions. By ensuring that the exact symbol is supplied, this operation delivers articles enriched with headlines, summaries, and essential market sentiment data. Make sure that all required detail is validated so that subsequent financial research and trading decisions are built on accurate and complete information. Use this operation as a critical step to connect real-time news with your broader market analysis workflow. "
+  },
+  {
+    "name": "List Available Screeners",
+    "id": "67e2de27d970657eaa48950d",
+    "description": "Retrieves a complete list of available stock screeners from the screener-management system. This operation returns detailed information including meta title, intro text, meta description, and key screener attributes such as the unique identifier, type, results count, category, description, filters, name, and associated client identifier. Although no input is required, the data provided by this operation is crucial for any subsequent operations that demand specific screener details. If the unique screener identifier or any other critical property is not provided in your workflow, run SeekingAlphaScreenersListAvailableScreeners before proceeding to obtain the necessary information. Use this operation to efficiently explore and select appropriate screeners for further analysis, ensuring a seamless workflow in stock screening management."
+  },
+  {
+    "name": "Retrieve Dividend History",
+    "id": "67e2de27d970657eaa48950e",
+    "description": "Retrieves dividend history for a specific stock symbol in a detailed manner. This operation collects historical dividend payment records including declaration, ex\u2010dividend, and pay dates to help analyze trends and payout stability. A valid stock symbol is required to uniquely identify and query the desired company. If the symbol is not provided, run SeekingAlphaSearchAutoCompleteSymbolsAndQueries before anything else to obtain the correct stock identifier from auto-complete suggestions. Once you have a proper symbol, use this operation to combine dividend data with other financial insights, thus enabling a comprehensive review of dividend performance, trends, and potential investment opportunities. "
+  },
+  {
+    "name": "Get Financial Data",
+    "id": "67e2de27d970657eaa48950f",
+    "description": "Fetches comprehensive financial data for a specific stock symbol, covering essential financial statements and performance metrics. This operation provides detailed income statements, balance sheets, and cash flow metrics necessary for in-depth financial analysis and comparison across companies. A valid stock symbol must be supplied to ensure accurate retrieval of data. If the symbol is missing, run SeekingAlphaSearchAutoCompleteSymbolsAndQueries before anything else to secure the appropriate stock identifier from the provided suggestions. Leveraging this financial data helps in conducting robust performance assessments and strategic investment decisions based on thorough financial analysis. "
+  },
+  {
+    "name": "Retrieve Fundamentals",
+    "id": "67e2de27d970657eaa489510",
+    "description": "Retrieves fundamental financial information for a given stock symbol by extracting key performance ratios and profitability measures. This operation requires a valid stock symbol to deliver data related to liquidity, efficiency, and overall financial health which assists in assessing the operational viability of a company. If the symbol is not provided, run SeekingAlphaSearchAutoCompleteSymbolsAndQueries before anything else to obtain the correct identifier from auto-complete suggestions. Utilize the acquired fundamentals alongside other detailed financial metrics to form a well-rounded view of a company\u2019s performance and potential for growth. "
+  },
+  {
+    "name": "Retrieve Symbol Metadata",
+    "id": "67e2de27d970657eaa489511",
+    "description": "Retrieves essential metadata for a specific stock, including company name, exchange listing, and sector classification, to provide a preliminary overview for further research. A valid stock symbol is mandatory to query and return the requisite basic details. If the symbol is absent, run SeekingAlphaSearchAutoCompleteSymbolsAndQueries before anything else to retrieve the accurate stock identifier based on user input suggestions. This metadata is instrumental for initial company research, laying the foundation for subsequent detailed financial and fundamental analysis that support informed investment decisions. "
+  },
+  {
+    "name": "Get Peer Comparison",
+    "id": "67e2de27d970657eaa489512",
+    "description": "Fetches peer comparison data for a designated stock symbol by comparing key performance metrics with industry counterparts. This operation requires a valid stock symbol to generate meaningful comparisons that help contextualize a company\u2019s market position and competitive strengths. If the required symbol is not supplied, run SeekingAlphaSearchAutoCompleteSymbolsAndQueries before anything else to obtain the correct stock identifier from the auto-complete suggestions. Use this detailed peer comparison information to benchmark performance, reveal competitive advantages, and support strategic investment choices. "
+  },
+  {
+    "name": "Get Company Profile",
+    "id": "67e2de27d970657eaa489513",
+    "description": "Fetches comprehensive company profile information for specified stock symbols supplied as a comma-delimited list. This operation gathers critical details such as market capitalization, number of employees, and industry classification that are essential for in-depth research and analysis. The operation mandates the provision of stock symbols; if these are missing, run SeekingAlphaSearchAutoCompleteSymbolsAndQueries before anything else to obtain the appropriate identifiers. Use the detailed company profiles to form a holistic view of corporate structure, performance indicators, and potential investment opportunities. "
+  },
+  {
+    "name": "Get Stock Split History",
+    "id": "67e2de27d970657eaa489514",
+    "description": "Fetches historical stock split data for a particular stock symbol, detailing past split events and their subsequent effects on share price performance. This operation requires a valid stock symbol to accurately retrieve the history of split events, which aids investors in understanding long-term structural changes in a company\u2019s stock. If the symbol is missing, run SeekingAlphaSearchAutoCompleteSymbolsAndQueries before anything else to secure the relevant stock identifier. Leverage the insights provided by the stock split history along with fundamental and financial data to assess historical performance and plan future investment strategies. "
+  },
+  {
+    "name": "Retrieve Symbol Summary",
+    "id": "67e2de27d970657eaa489515",
+    "description": "Retrieves a summary of key financial metrics and performance indicators for specified stock symbols provided as a comma-separated list. This operation compiles an overview of essential financial ratios and market assessments to deliver a succinct snapshot of a company\u2019s financial health. A valid list of stock symbols is required to ensure accurate data retrieval. If the symbols are not provided, run SeekingAlphaSearchAutoCompleteSymbolsAndQueries before anything else to retrieve the appropriate identifiers. Use the resulting summarized data as a foundation for further detailed financial analysis and comparative evaluation among companies. "
+  },
+  {
+    "name": "Get Valuation Metrics",
+    "id": "67e2de27d970657eaa489516",
+    "description": "Fetches detailed valuation metrics for specified stock symbols, offering an in-depth analysis of financial ratios used to assess market valuation. This operation requires a comma-separated list of stock symbols to obtain metrics such as price-to-book, EV/EBITDA, and other critical ratios. If the symbols are absent, run SeekingAlphaSearchAutoCompleteSymbolsAndQueries before anything else to retrieve the correct stock identifiers. Leverage these valuation metrics in conjunction with other financial data to determine whether a stock is appropriately valued or presents a potential investment opportunity. "
+  },
+  {
+    "name": "Retrieve Momentum Data",
+    "id": "67e2de27d970657eaa489517",
+    "description": "Retrieves momentum-related data for specified stock symbols, providing performance trends and price movement indicators over multiple time periods. This operation requires a comma-delimited list of stock symbols to analyze factors such as moving averages and relative pricing trends, which are vital for evaluating market momentum. If the symbols are not provided, run SeekingAlphaSearchAutoCompleteSymbolsAndQueries before anything else to obtain the correct identifiers from auto-complete suggestions. Use this momentum data to identify stocks with strong trends and to support tactical investment decisions based on price performance. "
+  },
+  {
+    "name": "List Transcripts By Symbol",
+    "id": "67e2de27d970657eaa489518",
+    "description": "Retrieves a collection of corporate transcripts for a specifically identified stock symbol, providing in-depth earnings call records and strategic company communications essential for financial analysis. The symbol identifier is a critical leaf property that must be provided to ensure the accuracy of the lookup. If the symbol identifier is not supplied, run SeekingAlphaSearchAutoCompleteSymbolsAndQueries before anything else to obtain the appropriate symbol details from auto-completion suggestions. This dependency guarantees that you have a verified stock symbol with associated attributes such as name and alias, which are indispensable for accurate transcript retrieval. By following this sequence, you can confidently integrate transcript data into your broader financial assessment and decision-making workflow. "
+  },
+  {
+    "name": "Auto-Complete Symbols and Queries",
+    "id": "67e2de27d970657eaa489519",
+    "description": "Delivers auto-completion suggestions for financial symbols and related queries by scanning comprehensive market data sources to match user input. This operation is designed to process a mandatory query string and return a curated list of potential matches, including essential leaf properties like the identifier, content, and associated synonyms. In the absence of the required query string, this operation cannot provide the precise suggestions needed, and no additional dependency is available within this path. Use this operation to efficiently refine user search inputs, ensuring that subsequent calls\u2014such as those retrieving detailed transcript information\u2014are based on correct and verified symbol data. This systematic approach significantly enhances the robustness and efficiency of your financial data exploration workflow."
+  }
+]

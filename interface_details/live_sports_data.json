@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Get Delta Updates Since Last ID",
+    "id": "67e2dbd4d970657eaa4894a3",
+    "description": "Retrieves delta updates starting from the most recent known identifier to synchronize event data across your application. This operation relies on the provided last identifier, which represents the delta from previous event queries. If the required last identifier is not provided, run RundownSportEventsGetEventsBySportIdAndDate before anything else to retrieve the most up-to-date delta value from sports event data. The response delivers updated scores, betting lines, team details, and live event statistics to ensure that your local records accurately reflect current changes. This operation is essential for maintaining real-time synchronization, supporting dashboards, and ensuring data consistency throughout your system. "
+  },
+  {
+    "name": "Get Event Information by ID",
+    "id": "67e2dbd4d970657eaa4894a4",
+    "description": "Retrieves comprehensive details for a specified sporting event by utilizing the unique event identifier provided. The response includes intricate information such as team configurations, scores, detailed scheduling, venue characteristics, and current betting line data. The unique event identifier is instrumental in ensuring the retrieval of accurate and in-depth event information. If eventId isn't provided, run RundownSportEventsGetEventsBySportIdAndDate before anything else to obtain the missing event id from the scheduled event listings. This operation is essential for updating live scores, composing detailed match analyses, and effectively populating event pages as part of your broader event management workflow. "
+  },
+  {
+    "name": "Get Moneyline by Line ID",
+    "id": "67e2dbd4d970657eaa4894a5",
+    "description": "Retrieves current moneyline betting information for a specific betting line using its unique identifier. The lineId is essential for accurately obtaining moneyline odds for home, away, and draw markets along with their corresponding deltas. If lineId is not provided, run GetClosingLinesBySportAndDate before anything else to find the required line identifier. If lineId is still missing, run GetOpeningLinesBySportAndDate before anything else to obtain the appropriate line identifier from initial betting data. This operation is crucial for displaying up-to-date moneyline odds, tracking odds movement, and supporting automated betting strategies. "
+  },
+  {
+    "name": "Get Spread by Line ID",
+    "id": "67e2dbd4d970657eaa4894a6",
+    "description": "Retrieves current point spread information for a specific betting line using its unique identifier. The lineId is required to obtain precise spread details, including home and away team spreads, moneyline deltas related to the spread, and extended spread metrics. If lineId is not provided, run GetClosingLinesBySportAndDate before anything else to source the required line identifier. If lineId remains unavailable, run GetOpeningLinesBySportAndDate before anything else to retrieve the necessary betting line reference. This operation supports comprehensive spread analysis and aids in determining potential payouts using accurate spread information. "
+  },
+  {
+    "name": "Get Closing Lines by Sport and Date",
+    "id": "67e2dbd4d970657eaa4894a7",
+    "description": "Retrieves final betting odds for all events in a specified sport on a given closing date. Required parameters include sportId and closing_date. The sportId uniquely identifies the sport category from which team details such as names and abbreviations are derived, while closing_date filters events to fetch finalized betting lines prior to event start. If sportId is not provided, run GetTeamsBySportId before anything else to secure the proper sport identifier. If closing_date is missing, ensure that the correct date from scheduled event timelines is provided. This operation is vital for post-event analysis, historical trend evaluation, and accurate record keeping of final betting odds. "
+  },
+  {
+    "name": "Get Conferences by Sport ID",
+    "id": "67e2dbd4d970657eaa4894a8",
+    "description": "Fetches all conferences for a specific sport by retrieving conference names, unique identifiers, and associated team details. The sport identifier is essential to guarantee that the conferences are correctly aligned with the designated sport category. If the sport ID is not provided, run RundownSportStructureGetTeamsBySportId before anything else to obtain the required sport identifier from a comprehensive list of teams. This operation plays a crucial role in structuring sports data and enhancing organizational clarity. It facilitates the creation of conference-based statistics and supports filtering of event data by conference. The data returned is intended for further analysis and integration into refined dashboards, ensuring that every subsequent operation benefits from accurately grouped sports information. "
+  },
+  {
+    "name": "Get Available Dates by Sport ID",
+    "id": "67e2dbd4d970657eaa4894a9",
+    "description": "Retrieves available event dates for a specified sport and outlines scheduling timelines for event planning. This operation returns a detailed list of dates on which events are scheduled, thus facilitating calendar population and content organization in sports management. It crucially depends on a valid sport id to filter and retrieve dates that correspond uniquely to the relevant sport category. If the required sport id is not provided, run RundownSportStructureGetTeamsBySportId before anything else to obtain the correct sport identifier from preexisting team and sport data. This prerequisite action ensures that the subsequent scheduling information accurately aligns with a legitimate sport, minimizes data processing errors, and supports coherent planning across your sports management system. "
+  },
+  {
+    "name": "Get Divisions by Sport ID",
+    "id": "67e2dbd4d970657eaa4894aa",
+    "description": "Retrieves all divisions for a specified sport by providing division names, unique IDs, and details about associated teams. The sport identifier is a critical parameter to ensure that the divisions correspond correctly to the intended sport. If the sport ID is not provided, run RundownSportStructureGetTeamsBySportId before anything else to secure the appropriate sport identifier from a validated source of team data. This operation is integral for defining the divisional structure and grouping teams accordingly, thus supporting division-based statistics, event filtering, and ranking operations. The returned divisions facilitate consistent data aggregation and analysis, playing a key role in maintaining robust sports organization systems. "
+  },
+  {
+    "name": "Get Events by Sport ID and Date",
+    "id": "67e2dbd4d970657eaa4894ab",
+    "description": "Retrieves all events for a specific sport on a given date by filtering scheduled matches and detailed event information. Both the sport identifier and event date are required to accurately query the relevant event schedule. If the sport ID is missing, run RundownSportStructureGetTeamsBySportId before anything else to secure the necessary sport identifier from a trusted team data source. If the event date is not provided, ensure that a valid calendar input or previously sourced event schedule is used to supply the required date. This operation yields comprehensive event data, including teams, scores, schedules, and betting lines, which is vital for live tracking, planning betting strategies, and displaying daily event schedules in a dynamic sports management environment. "
+  },
+  {
+    "name": "Get Opening Lines by Sport and Date",
+    "id": "67e2dbd4d970657eaa4894ac",
+    "description": "Fetches initial betting odds for all events in a specific sport on a given opening date. Required parameters include sportId and opening_date. The sportId is essential to correctly associate teams with the sport category, and the opening_date determines the day for which early betting lines are to be retrieved. If sportId is not provided, run GetTeamsBySportId before anything else to obtain the necessary sport identifier from sports data. If opening_date is missing, make sure to supply the correct event date based on the scheduled timeline. This operation is crucial for comparing early market assessments with later odds and for identifying initial betting opportunities."
+  },
+  {
+    "name": "Get Schedule by Sport ID",
+    "id": "67e2dbd4d970657eaa4894ad",
+    "description": "Retrieves the complete schedule for a specified sport by compiling key event details including dates, participating teams, venues, and basic game information. This operation is essential for long-term planning, calendar creation, and strategic content management in sports data systems. It mandates the presence of a valid sport id to ensure that all events returned are accurately linked to the designated sport category. If the required sport id is missing, run RundownSportStructureGetTeamsBySportId before anything else to secure the necessary identifier from existing team-related information. This dependency guarantees that the schedule data is precise, properly aligned with the correct sport, and reliably supports subsequent operational processes. "
+  },
+  {
+    "name": "Get Teams by Sport ID",
+    "id": "67e2dbd4d970657eaa4894ae",
+    "description": "Fetches a comprehensive team roster for a specified sport by returning essential team details such as team id, name, abbreviation, and mascot. This operation is vital for applications requiring precise team identification and robust sports roster management, thus facilitating activities like team statistics generation and profile mapping. It operates on the basis of a valid sport id to ensure accuracy and relevance of the teams listed. If the required sport id is not provided, run RundownSportScheduleGetAvailableDatesBySportId before anything else to retrieve the necessary sport identifier from scheduling data. This action ensures that the team information is correctly correlated with its sport, thereby reinforcing consistency and reliability in your sports data architecture."
+  }
+]

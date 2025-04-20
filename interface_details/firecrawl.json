@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Initiate Website Crawl\n",
+    "id": "67791c7961e4d710c900f1d3",
+    "description": "Initiates a crawl of a website starting from a specified URL. If 'url' isn't provided, run SiteMappingRetrieveWebsiteLinks before anything else to find suitable starting URLs. This operation is crucial for comprehensive website analysis, content indexing, or data gathering across multiple pages. Use it to automate large-scale data collection or to map out website structures. Configurable options include depth limit, page limit, external link following, and backward link navigation. Supports custom headers and main content extraction. Webhook functionality allows real-time monitoring of crawl progress and results."
+  },
+  {
+    "name": "Batch Scrape Multiple URLs\n",
+    "id": "67791c7961e4d710c900f1d2",
+    "description": "Scrapes content from multiple URLs in a single request. If URLs aren't provided, run SiteMappingRetrieveWebsiteLinks before anything else to obtain a list of URLs to scrape. This operation is ideal for efficient, large-scale data extraction across numerous web pages. Use it for bulk content gathering, comparative analysis, or when processing a predefined set of web pages simultaneously. Supports custom headers, main content extraction, timeouts, and wait times. Optional LLM-based extraction with custom prompts and schemas allows for targeted data extraction. Configurable actions like scrolling, clicking, and typing enable interaction with dynamic web pages before content capture."
+  },
+  {
+    "name": "Get Crawl Job Status and Results",
+    "id": "67791c7961e4d710c900f1d4",
+    "description": "Retrieves the current status and results of a specific crawl job. If 'crawlJobId' isn't provided, run CrawlingSystemInitiateWebsiteCrawl before anything else to obtain a valid crawl job ID. This operation is essential for monitoring ongoing crawls, checking completion status, and accessing crawl results. Use it to track progress, manage crawl operations, and retrieve extracted data from completed crawls. Provides information on pages crawled, credits used, expiration time, and crawl status. Allows for pagination of large result sets through the 'next' URL. Returns various data formats including HTML, raw HTML, screenshots, and LLM extractions based on the initial crawl configuration."
+  },
+  {
+    "name": "Retrieve Website Link Map\n",
+    "id": "67791c7961e4d710c900f1d5",
+    "description": "Retrieves a list of links from a specified website URL. This operation is fundamental for discovering website structure and content. Use it to find URLs for other operations like ScrapingServiceExtractWebpageContent or CrawlingSystemInitiateWebsiteCrawl when specific page URLs aren't known. Common applications include site mapping, content discovery, and preparing for broader crawling or scraping tasks. Supports subdomain inclusion, sitemap usage, and link limit configuration. Can be used with a search query to find specific types of pages within a site."
+  },
+  {
+    "name": "Scrape Single Webpage Content\n",
+    "id": "67791c7961e4d710c900f1d6",
+    "description": "Extracts content from a specified webpage URL. If 'url' isn't provided, run SiteMappingRetrieveWebsiteLinks before anything else to find relevant URLs. Use this operation to gather specific webpage content, perform custom extractions, or prepare data for further analysis. Common use cases include content scraping, data extraction, and website analysis. Supports custom headers, main content extraction, and wait times for JavaScript-heavy pages. Offers LLM-based extraction with custom prompts and schemas for targeted data retrieval. Configurable actions allow interaction with dynamic web elements before content capture."
+  }
+]

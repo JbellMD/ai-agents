@@ -1,0 +1,7 @@
+[
+  {
+    "name": "Retrieve Articles by Query or ID",
+    "id": "67e2e0d599f31f9c55d127da",
+    "description": "Retrieves research articles from arXiv by processing search queries or provided article identifiers. In this operation, academic paper details including titles, abstracts, and unique identifiers are gathered to support further analysis or citation. Designed primarily for initial literature exploration, it requires no mandatory input fields to function effectively. This makes it accessible for users beginning their research journey, allowing them to obtain essential article information directly without any preceding dependency operations. However, if specific article identifiers or detailed search criteria are not supplied, consider running a complementary search operation from the article-retrieval suite beforehand to retrieve the missing information necessary for detailed inquiry. Use this operation as a central tool for managing and referencing scholarly communications."
+  }
+]

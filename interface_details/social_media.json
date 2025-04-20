@@ -1,0 +1,202 @@
+[
+  {
+    "name": "Get Affiliates by Screenname",
+    "id": "67f43b9116e6f3c9741e2375",
+    "description": "This operation retrieves the complete list of affiliates linked to a Twitter user's screenname, serving as a foundational step for social media analysis. It requires the Twitter user's screenname to uniquely identify the profile whose affiliate data is being requested. If the Twitter user's screenname is not provided, ensure you first retrieve it from an external user data extraction process or a verified repository before proceeding. All parameters must be supplied accurately to avoid null results. This endpoint underpins robust list management tasks and supports further social media interactions by linking requests to verified Twitter handles, thereby enabling reliable downstream analysis. "
+  },
+  {
+    "name": "Check Follow Status",
+    "id": "67f43b9116e6f3c9741e2376",
+    "description": "Checks whether a specified Twitter user follows another account. This operation requires two critical inputs: the Twitter user's screenname and the target account's screenname to verify the follow status. If either the Twitter screenname or the target screenname is not provided, run SocialMediaProfileManageGetUserProfileInfo before anything else to obtain full user profile details that include the necessary screenname. Ensuring these parameters are populated guarantees that the follow status check operates accurately and efficiently. Use this operation after validating input identifiers to confirm the established following relationship and support further engagement analysis. "
+  },
+  {
+    "name": "Check Retweet Status by User",
+    "id": "67f43b9116e6f3c9741e2377",
+    "description": "Checks if a user has retweeted a specific tweet using the provided Twitter user's screenname and tweet id. If the Twitter user's screenname is missing, run SocialMediaTweetServiceGetUserTimeline before anything else to retrieve the user's screenname from recent tweets; if the tweet id is missing, run SocialMediaContentSearchFindTweetsByQuery before anything else to search for and obtain the tweet id required for checking the retweet status. "
+  },
+  {
+    "name": "Get Company by Domain",
+    "id": "67f43b9116e6f3c9741e2378",
+    "description": "Obtains company information using the provided company domain name. The only required field is the company domain, which must be supplied directly to get basic company identifiers needed for further analysis. If the company domain is not provided, note that no preceding API in the company-insights group yields this value; therefore, secure the domain from your primary data source before proceeding. "
+  },
+  {
+    "name": "Get Company Details",
+    "id": "67f43b9116e6f3c9741e2379",
+    "description": "Retrieves comprehensive company details using the company's LinkedIn username. This operation requires the company username to extract detailed information and unique identifiers essential for other endpoints. If the username is not provided, use your internal process to first obtain the correct company username, as no alternative operation in the company-insights category furnishes this value. "
+  },
+  {
+    "name": "Get Employee Count",
+    "id": "67f43b9116e6f3c9741e237a",
+    "description": "Retrieves the total number of employees for a company using its unique identifier. The required company ID is crucial for success. If the company ID is not provided, run SocialMediaCompanyInsightsGetCompanyDetails before anything else to extract the company identifier from comprehensive company records. "
+  },
+  {
+    "name": "Get Detailed Company Insights",
+    "id": "67f43b9116e6f3c9741e237b",
+    "description": "Aggregates detailed insights about a company, including headcount trends and job openings, based on the company's LinkedIn username. This username is mandatory to fetch the necessary analytics. If the username is not provided, ensure you obtain the company username via your internal data retrieval processes, as no alternative API call in this group offers this information. "
+  },
+  {
+    "name": "Get Company Jobs",
+    "id": "67f43b9116e6f3c9741e237c",
+    "description": "Retrieves job postings from multiple companies to support targeted job analysis. Although no required input is defined, if company IDs are missing, run SocialMediaCompanyInsightsGetCompanyByDomain before anything else to obtain accurate company identifiers for a comprehensive job search. "
+  },
+  {
+    "name": "Get Company Jobs Count",
+    "id": "67f43b9116e6f3c9741e237d",
+    "description": "Fetches the total number of job postings for a specific company using its company identifier. The company ID is imperative for proper execution. If the company ID is missing, run SocialMediaCompanyInsightsGetCompanyDetails before initiating this call to obtain the necessary company identifier from the detailed company records. "
+  },
+  {
+    "name": "Get Related Companies",
+    "id": "67f43b9116e6f3c9741e237e",
+    "description": "Retrieves a curated list of companies that are commonly associated or viewed together, supporting broader company insights analysis. No mandatory field is required, though an optional company LinkedIn username can help refine results. Use this endpoint for additional contextual data when the company username is not directly available from other operations. "
+  },
+  {
+    "name": "Get Post Comments",
+    "id": "67f43b9116e6f3c9741e237f",
+    "description": "Retrieves comments for a specific LinkedIn post identified by its unique URN. The URN is a required identifier to access the appropriate comments. If the URN is missing, no direct dependency exists within the company-insights group; therefore, ensure you obtain the post URN from your internal post management or tracking systems before calling this endpoint. "
+  },
+  {
+    "name": "Get Company Posts",
+    "id": "67f43b9116e6f3c9741e2380",
+    "description": "Fetches a collection of LinkedIn posts made by a specific company using its LinkedIn username. This username is essential for accurate post retrieval. If the username is not provided, run SocialMediaCompanyInsightsGetCompanyDetails before this operation to secure the company LinkedIn username from comprehensive company records. "
+  },
+  {
+    "name": "Get Followers List by Screenname",
+    "id": "67f43b9116e6f3c9741e2381",
+    "description": "Retrieves the list of followers for a designated Twitter account using the provided screenname. This operation is essential for collecting follower data along with associated metadata, which supports broader analytic and engagement strategies. A valid Twitter screenname is mandatory; if it is missing, run SocialMediaProfileManageGetUserProfileInfo before anything else to extract comprehensive profile details that will supply the needed screenname. This dependency step is critical for robust data retrieval and helps manage follower insights effectively. Additionally, the operation supports pagination through an optional cursor parameter. "
+  },
+  {
+    "name": "Get Following List by User",
+    "id": "67f43b9116e6f3c9741e2382",
+    "description": "Retrieves the list of accounts a Twitter user is following based on the provided screenname. This operation enables an in-depth view of outgoing social connections, aiding in the analysis of user influence and network patterns. A valid Twitter screenname is required; if absent, run SocialMediaProfileManageGetUserProfileInfo before anything else to obtain full user profile details that include the necessary screenname. This pre-verification ensures data accuracy and facilitates targeted network analysis. Optional fields such as user ID and pagination cursor further enhance the retrieval of comprehensive following lists. "
+  },
+  {
+    "name": "Get Hiring Team Info",
+    "id": "67f43b9116e6f3c9741e2383",
+    "description": "Retrieves hiring team details for a particular job posting using both a job ID and a LinkedIn job URL. If the job ID is absent, run SocialMediaJobManagementSearchJobs before anything else to find the job identifier. Similarly, if the LinkedIn job URL is missing, run SocialMediaJobManagementSearchJobs to secure the proper job link. "
+  },
+  {
+    "name": "Get Job Details",
+    "id": "67f43b9116e6f3c9741e2384",
+    "description": "Fetches detailed information about a specific job posting by using the job ID as the key identifier. If the job ID is not provided, run SocialMediaJobManagementSearchJobs before anything else to obtain the necessary job identifier for detailed information. "
+  },
+  {
+    "name": "Get Latest Replies",
+    "id": "67f43b9116e6f3c9741e2385",
+    "description": "Retrieves the latest replies to a tweet using the provided tweet id. If the tweet id is not provided, run SocialMediaContentSearchFindTweetsByQuery before anything else to locate the tweet id needed to fetch the latest replies reliably. "
+  },
+  {
+    "name": "Get Email by LinkedIn URL",
+    "id": "67f43b9116e6f3c9741e2386",
+    "description": "Attempts to extract email addresses associated with a specified LinkedIn profile using the provided profile URL as the key input. This operation is critical for verifying and validating user contact details through advanced email retrieval techniques. The URL is indispensable for this function, as it links the email extraction process to the accurate social media profile data. If the URL isn't provided, run SocialMediaProfileManageGetUserProfileInfo before anything else to secure the necessary LinkedIn profile URL from the basic profile information. Executing this dependency first ensures that the subsequent extraction method operates on verified data, thereby bolstering communication workflows and account management with dependable, precise results."
+  },
+  {
+    "name": "Get List Followers",
+    "id": "67f43b9116e6f3c9741e2387",
+    "description": "Obtains the list of followers associated with a specified Twitter list using the provided list identification. This operation is vital for retrieving detailed follower information linked to a Twitter list, thereby aiding audience analysis and engagement tracking. The only required input is the list identification; if it is not provided, ensure that the correct list id is acquired through your external list management process before proceeding. This precaution guarantees data accuracy and proper operation execution, supporting effective strategy development based on detailed follower analytics. "
+  },
+  {
+    "name": "Get List Members Details",
+    "id": "67f43b9116e6f3c9741e2388",
+    "description": "Fetches detailed information about the members of a specified Twitter list using the required list identification. This operation is crucial for evaluating the composition of a Twitter list and gaining insights into member attributes for targeted engagement and segmentation. A valid list identification is mandatory; if the list id is missing, make sure to obtain it through your external list management system before invoking this operation. This preparatory step is necessary to ensure the integrity and completeness of the returned member details, supporting comprehensive list management efforts. "
+  },
+  {
+    "name": "Get List Timeline",
+    "id": "67f43b9116e6f3c9741e2389",
+    "description": "Retrieves the timeline of a Twitter list, providing real-time tweet updates and engagement details. This operation requires the List ID, which unambiguously identifies the specific Twitter list from which data is to be retrieved. If the List ID isn't provided, run your dedicated external list lookup or management operation before anything else to secure the correct identifier. Be sure that all preliminary steps to verify and retrieve the List ID have been completed. Accurate provision of the List ID is critical, as it ensures that the timeline data is compiled correctly and integrated seamlessly into your social media interaction workflow for further analysis and processing. "
+  },
+  {
+    "name": "Get Post Details",
+    "id": "67f43b9116e6f3c9741e238a",
+    "description": "This operation retrieves detailed information for a specific LinkedIn post by processing a unique LinkedIn post URL provided by the user. It is essential to supply the LinkedIn post URL, as this parameter serves as the primary identifier to fetch accurate post details such as content, publication time, and engagement metrics. If the LinkedIn post URL is not provided, run an external search or listing operation from the post-data-retrieval group\u2014one that returns valid LinkedIn post identifiers\u2014before anything else to supply the missing URL. Ensuring the post URL is available guarantees that this operation will deliver comprehensive and precise data for further analysis and content review."
+  },
+  {
+    "name": "Get Post Reposts Data",
+    "id": "67f43b9116e6f3c9741e238b",
+    "description": "Retrieves data concerning reposts of a specific LinkedIn post, offering insights into content diffusion and audience engagement. This operation requires the URN of the post to correctly pinpoint the source and compile the repost metrics. If the URN is not provided, run SocialMediaPostDataRetrieverGetPostDetails before initiating this call to first obtain the necessary post identifier from a detailed post retrieval. Obtaining the correct URN is critical for ensuring that repost data is accurately gathered and integrated into your analytical pipeline, thereby supporting precise measurement of content virality and performance."
+  },
+  {
+    "name": "Get Comprehensive Profile Data",
+    "id": "67f43b9116e6f3c9741e238c",
+    "description": "Retrieves extensive profile details and advanced metrics based on a provided username, offering enriched data insights ideal for in-depth social media analysis. The username is a mandatory input for this operation, as it drives the retrieval of comprehensive profile attributes and analytical measurements. If the username isn't provided, run SocialMediaProfileManageGetUserProfileInfo before anything else to acquire basic profile information that includes the required username. Following this sequence ensures that the detailed insights offered here are based on accurate and verified user identity data. This method supports a structured workflow by first securing essential identifiers and then progressing to advanced data retrieval, thus enabling dependable downstream processing for social media management. "
+  },
+  {
+    "name": "Get Profile Data by URL",
+    "id": "67f43b9116e6f3c9741e238d",
+    "description": "Fetches detailed LinkedIn profile data using a provided profile URL, delivering enriched user information including advanced contact analytics and behavioral insights essential for targeted engagement. The profile URL is a required input for proper execution of this operation. If the URL isn't provided, run SocialMediaProfileManageGetUserProfileInfo before anything else to extract a valid profile URL from the basic data set. With the correct URL in hand, this operation gathers comprehensive details that support further analysis and refinement in your social media management workflow. This sequential process underpins data accuracy by ensuring that all dependency steps are completed, thereby maintaining a robust supply chain of profile information for enhanced operational reliability. "
+  },
+  {
+    "name": "Get Replies to Tweets",
+    "id": "67f43b9116e6f3c9741e238e",
+    "description": "Retrieves replies to a user's tweets using the provided Twitter user's screenname. If the screenname is missing, run SocialMediaTweetServiceGetUserTimeline before anything else to retrieve the user's timeline and obtain the correct screenname necessary for fetching tweet replies. "
+  },
+  {
+    "name": "Get Retweets by Tweet ID",
+    "id": "67f43b9116e6f3c9741e238f",
+    "description": "Retrieves retweets of a tweet using the provided tweet id. If the tweet id is missing, run SocialMediaContentSearchFindTweetsByQuery before anything else to search for and obtain the tweet id necessary for retrieving retweet information. "
+  },
+  {
+    "name": "Search Employees by Company ID",
+    "id": "67f43b9116e6f3c9741e2390",
+    "description": "Searches and retrieves employee information for a company using the company ID as the primary identifier. If the company ID is not provided, run SocialMediaCompanyInsightsGetCompanyByDomain before anything else to gather the necessary company details including the required identifier."
+  },
+  {
+    "name": "Search Jobs",
+    "id": "67f43b9116e6f3c9741e2391",
+    "description": "Searches for job postings based on specified keywords and criteria. Keywords are mandatory for an effective search; if they are not provided, supply valid search terms to extract relevant job data and job identifiers required by subsequent operations. "
+  },
+  {
+    "name": "Search Locations by Keyword",
+    "id": "67f43b9116e6f3c9741e2392",
+    "description": "This operation is designed to conduct a targeted search for locations using a specific keyword provided by the user, thereby extracting relevant geographical data essential for localized content strategies and trend analysis. The required field, keyword, directs the system to focus on location-based information and supports tasks such as event planning or market segmentation. In the event that the keyword is not provided, it is vital to first retrieve or generate an appropriate search term from your existing information sources before invoking this function. By ensuring the keyword is accurately supplied, the operation can efficiently return reliable location data and seamlessly integrate with broader search workflows, enhancing the contextual accuracy of all subsequent content retrieval activities. "
+  },
+  {
+    "name": "Search People on LinkedIn",
+    "id": "67f43b9116e6f3c9741e2393",
+    "description": "This operation searches for individuals on the LinkedIn platform based on flexible and diverse criteria, enabling you to retrieve profiles of professionals, clients, or business contacts. Although there are no strictly required input fields, supplying detailed and contextually relevant information greatly refines the search outcomes. If essential identifiers or specific criteria are missing, consider augmenting your input using data from earlier search operations that gather relevant profile information. The operation is optimized to work in tandem with other content searches, empowering users with actionable insights and extended professional networks. By providing supplemental input, you enhance the precision and effectiveness of the LinkedIn people search, which forms a key component of your overall content and network analysis strategy. "
+  },
+  {
+    "name": "Search Posts by Criteria",
+    "id": "67f43b9116e6f3c9741e2394",
+    "description": "This operation is engineered to search for LinkedIn posts using a range of criteria, delivering a multifaceted approach to content discovery and professional discourse analysis. While no single input field is mandated, the ability to incorporate additional parameters from earlier or complementary searches can significantly enhance the precision of the retrieved posts. Should any necessary criteria or identifiers be missing, it is recommended to supplement your data with information gathered from prior operations that return relevant filtering details. By ensuring that auxiliary search parameters are included, this operation can effectively target and retrieve posts that are not only pertinent but also valuable for subsequent analytical and strategic tasks, thereby enriching the overall content-search ecosystem. "
+  },
+  {
+    "name": "Search Tweets by Query",
+    "id": "67f43b9116e6f3c9741e2395",
+    "description": "This operation performs a comprehensive search for tweets using a user-defined search query that guides the retrieval of tweet content from our database. It is purposefully designed to filter and fetch tweets that match specific keywords or phrases, making it integral for content discovery and analysis across social media. The required field, query, is essential for defining the search scope and ensuring precise results. In cases where the query parameter is not provided, make sure to obtain or generate an appropriate search phrase from prior data inputs or external sources before invoking this function. By supplying a valid search query, you guarantee that the tweet search process will yield targeted and actionable results that integrate efficiently with your broader content-search workflow. "
+  },
+  {
+    "name": "Get Space Details",
+    "id": "67f43b9116e6f3c9741e2396",
+    "description": "Retrieves detailed information for a Twitter space by using a unique Space ID. This operation is designed to extract key attributes, descriptions, and real-time metrics related to a specific Twitter space, essential for monitoring dynamic social engagement. The Space ID is mandatory for targeting the correct space and compiling its data accurately. If the Space ID isn't provided, run a dedicated external space discovery or lookup process before initiating this call to obtain the required identifier. Ensuring that the Space ID is accurately supplied supports your overall real-time monitoring framework and preserves data integrity for subsequent analysis. "
+  },
+  {
+    "name": "Get User Timeline",
+    "id": "67f43b9116e6f3c9741e2397",
+    "description": "Retrieves a user's tweet timeline without requiring additional input parameters, serving as a foundational operation for obtaining Twitter user details such as tweet ids and screennames. This operation is useful for gathering essential data when these details are missing for other dependent operations. "
+  },
+  {
+    "name": "Get Trends by Country",
+    "id": "67f43b9116e6f3c9741e2398",
+    "description": "Retrieves trending topics for a specified country, capturing popular discussions and emerging themes across Twitter in real time. This operation requires the Country parameter, which precisely designates the geographic focus of the trending data. If the Country parameter isn\u2019t provided, run an external geographic lookup or country selection operation before using this endpoint to fetch the correct identifier. Properly supplying the Country parameter is crucial to achieving accurate and relevant trend data, which in turn supports comprehensive analysis and informed decision-making within your real-time social media monitoring and analytical workflows. "
+  },
+  {
+    "name": "Get Tweet Details",
+    "id": "67f43b9116e6f3c9741e2399",
+    "description": "Retrieves detailed information about a tweet using the provided tweet id. If the tweet id is missing, run SocialMediaContentSearchFindTweetsByQuery before anything else to search for and obtain the tweet id necessary for accessing detailed tweet information. "
+  },
+  {
+    "name": "Get Tweet Thread",
+    "id": "67f43b9116e6f3c9741e239a",
+    "description": "Retrieves the full thread of a tweet using the specified tweet id. If the tweet id is not provided, run SocialMediaContentSearchFindTweetsByQuery before anything else to search for and obtain the tweet id required for fetching the tweet thread effectively. "
+  },
+  {
+    "name": "Get User Media Content",
+    "id": "67f43b9116e6f3c9741e239b",
+    "description": "Retrieves media content posted by a user using the provided Twitter user's screenname. If the screenname is missing, run SocialMediaTweetServiceGetUserTimeline before anything else to retrieve the user's timeline and obtain the necessary screenname for accessing user media content."
+  },
+  {
+    "name": "Get User Profile Info",
+    "id": "67f43b9116e6f3c9741e239c",
+    "description": "Fetches essential user profile information from the social media platform, providing foundational details such as user identifiers and basic contact data that serve as a starting point for further profile enrichment processes. This operation does not require additional input parameters and is intended to be the first step in any profile-related workflow. By executing this API, you initiate a reliable and structured method to obtain the vital attributes of a user's social media presence. Its output forms the base for subsequent calls that require detailed profile specifics. If further refined data is needed for advanced operations, use the results of this call to supply the missing information in later stages. This approach ensures a clear and systematic data pipeline for robust social media profile management. "
+  }
+]

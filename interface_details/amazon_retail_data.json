@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Convert ASIN to GTIN",
+    "id": "67e2db860ffca9f2f3d35d16",
+    "description": "Converts an Amazon Standard Identification Number (ASIN) to its corresponding Global Trade Item Number (GTIN) to facilitate effective cross-platform product matching, inventory control, and catalog consistency. The operation requires the ASIN as the unique identifier for the product. If the ASIN is not provided, run AmazonProductCatalogSearchProductsByQueryAndFilters before anything else to obtain a valid ASIN from detailed product search results. Once the required ASIN is acquired, this process converts it into the appropriate GTIN format and returns both the GTIN type and its value, ensuring that subsequent catalog management and analytical tasks can be performed with reliable product data. "
+  },
+  {
+    "name": "Fetch Best Sellers by Category",
+    "id": "67e2db860ffca9f2f3d35d17",
+    "description": "Fetches the top best-selling products within a specified Amazon category to support trend analysis, product sourcing, and market evaluation. This operation mandates the provision of a category, which can be a top-level segment or an extended subcategory path. If the category is not supplied, run AmazonCategoryManagementGetCategoriesByCountry before proceeding to obtain a list of available category IDs that can be used to identify the desired category. With a valid category, the operation returns detailed best-seller data including product identifiers, titles, pricing, ratings, and ranking metrics essential for strategic decision-making and competitive analysis. "
+  },
+  {
+    "name": "Fetch Products by Deal ID",
+    "id": "67e2db860ffca9f2f3d35d18",
+    "description": "Retrieves comprehensive product listings associated with a specified Amazon deal. This operation gathers detailed information including the product title, URL, deal badge, deal price, original list price, and savings percentage. It is designed to support promotional analysis and competitive discount tracking, thereby enabling informed decisions in market evaluations. The operation requires a unique deal identifier to function correctly. If the deal id is not provided, run AmazonDealServiceGetAvailableDealsWithFilters before anything else to obtain active deal identifiers from current promotional data. Use the retrieved identifier in this call to ensure that the product details reflect valid and up-to-date deal information for further processing and reporting. "
+  },
+  {
+    "name": "Get Available Deals with Filters",
+    "id": "67e2db860ffca9f2f3d35d19",
+    "description": "This operation retrieves available Amazon deals with various filtering options and provides detailed deal information including the unique deal identifier, title, start and end times, pricing details, savings percentages, and product ASIN. It is intended to help analyze current promotions, monitor competitor discounts, and identify potential arbitrage opportunities through comprehensive deal data. Although no input parameters are strictly required, if filtering by category is desired then the relevant category identifiers must be obtained. If category identifier information is not provided, run AmazonCategoryManagementGetCategoriesByCountry before anything else to secure the necessary category IDs from its response output. This dependency ensures that the deal details can be further refined and seamlessly integrated into subsequent processing steps. "
+  },
+  {
+    "name": "Get Categories by Country",
+    "id": "67e2db860ffca9f2f3d35d1a",
+    "description": "Fetches a list of product categories available on Amazon for a specified country. This operation retrieves comprehensive category details including unique identifiers and descriptive names, thereby enabling you to efficiently navigate and classify available product lines across various Amazon marketplaces. It requires no input parameters and is designed as the first step in category management workflows, providing foundational data to support further operations. If a required unique category identifier is not directly available in your workflow, run this operation before initiating any dependent calls. The returned information is indispensable for developers and analysts focused on streamlined product catalog management and accurate market data integration. "
+  },
+  {
+    "name": "Fetch Product Details by ASIN",
+    "id": "67e2db860ffca9f2f3d35d1b",
+    "description": "Fetches extensive product details for one or more Amazon Standard Identification Numbers (ASINs), supporting in-depth analysis, competitive research, and pricing strategy development. This operation requires the ASIN input, which can include up to 10 comma-separated values in a single request. If the ASIN is not provided, run AmazonProductCatalogSearchProductsByQueryAndFilters before anything else to search and retrieve valid ASINs from available product listings. Once the correct ASINs are acquired, the operation delivers comprehensive product information such as specifications, ratings, pricing details, and additional descriptive data that are vital for accurate product evaluation and market analysis. "
+  },
+  {
+    "name": "Get Offers by ASIN",
+    "id": "67e2db860ffca9f2f3d35d1c",
+    "description": "Retrieves product offers for a specified Amazon ASIN by returning comprehensive offer details including current price, seller information, delivery options, and any additional product specifics. This operation requires the product identifier and supports batching of multiple identifiers in a single request for efficient analysis. If the product identifier is not provided, run AmazonProductCatalogSearchProductsByQueryAndFilters before anything else to locate and retrieve the ASIN from broader search results. Use this operation for competitive pricing investigations, market analysis, and identifying potential arbitrage opportunities while ensuring informed decision making. "
+  },
+  {
+    "name": "Fetch Product Reviews by ASIN",
+    "id": "67e2db860ffca9f2f3d35d1d",
+    "description": "Retrieves customer reviews and product ratings for a specified Amazon product using its unique ASIN. This operation depends on the provided ASIN, which is the definitive product identifier necessary to retrieve detailed review data including ratings, comments, and review dates. If the ASIN is not provided, run AmazonProductCatalogSearchProductsByQueryAndFilters before anything else to find the product ASIN from a broader catalog search. This systematic approach ensures that the review retrieval process is based on accurate product identification, thereby supporting tasks such as sentiment analysis, quality assessment, and comprehensive evaluation of customer feedback. Ensure to complete the catalog search dependency to proceed with correct review extraction. "
+  },
+  {
+    "name": "Get Products by Category ID",
+    "id": "67e2db860ffca9f2f3d35d1e",
+    "description": "Retrieves a curated list of products for specified Amazon category IDs, delivering in-depth product details such as the country of search, the associated Amazon domain, and the total number of products available within the chosen categories. This operation requires a unique category identifier as input to accurately fetch product information. If the category identifier is not provided, run AmazonCategoryManagementGetCategoriesByCountry before anything else to secure the necessary identifier from its output. Following this dependency ensures a systematic approach to product research and inventory analysis by leveraging verified category data, thereby supporting robust product catalog management and detailed market evaluation."
+  },
+  {
+    "name": "Get Products by Promo Code",
+    "id": "67e2db860ffca9f2f3d35d1f",
+    "description": "This operation retrieves product listings associated with a specified Amazon promo code, delivering key product details such as ASIN, title, pricing, product photo, availability status, and star ratings. It is crucial for verifying promo code validity, analyzing promotional product ranges, and tracking competitor discount strategies. The promo code is a mandatory input for correlating promotional campaigns with specific product data. If the promo code is not provided, run AmazonDealServiceGetAvailableDealsWithFilters before anything else to extract a valid promo code from current active promotions. This dependency guarantees that all necessary promotional metadata is available to achieve accurate and effective product analyses."
+  },
+  {
+    "name": "Search Products by Query and Filters",
+    "id": "67e2db860ffca9f2f3d35d20",
+    "description": "Searches the Amazon product catalog using a specified query that may consist of free-form text or a product ASIN. This operation is essential for identifying product details such as country of availability, domain, and the total number of matching products. The query parameter is crucial; if it is missing, run AmazonCategoryManagementGetCategoriesByCountry before anything else to obtain the necessary category identifiers which facilitate a more refined search. This operation is designed to assist in locating product ASINs when they are not directly available and supports common use cases like product research, price comparison, and detailed product identification. Follow the recommended chain to retrieve minimal yet essential product information for further processing."
+  },
+  {
+    "name": "Get Products by Seller ID",
+    "id": "67e2db860ffca9f2f3d35d21",
+    "description": "Retrieves a complete list of product listings associated with a particular Amazon seller by using the unique seller identifier. This operation returns detailed listing information such as pricing, availability, and seller-related attributes that support inventory analysis and market comparisons. The seller identifier is critical for accessing accurate product data. If the seller identifier is not provided, run AmazonSellerManagementGetProfileBySellerId before anything else to obtain the necessary seller identification from profile details. Use this operation for inventory management, competitive benchmarking, and assessing wholesale opportunities. "
+  },
+  {
+    "name": "Get Seller Profile by Seller ID",
+    "id": "67e2db860ffca9f2f3d35d22",
+    "description": "Retrieves detailed profile information for an Amazon seller by using the unique seller identifier. This operation supplies essential profile elements including business name, business address, rating, and links to the seller's store and profile page, thereby supporting seller verification and competitive analysis. The seller identifier must be provided to obtain accurate profile data. If the seller identifier is missing, run AmazonProductCatalogGetOffersByAsin before anything else to extract seller identification from offer listings. Use this operation for seller reputation assessment, verifying business credentials, and thorough competitor evaluation. "
+  },
+  {
+    "name": "Fetch Seller Reviews by Seller ID",
+    "id": "67e2db860ffca9f2f3d35d23",
+    "description": "Fetches customer reviews for an Amazon seller by using the unique seller identifier, delivering detailed insights such as review ratings, comments, review dates, and reviewer names. This operation is essential for evaluating customer satisfaction and tracking seller performance over time. The seller identifier is required for correctly retrieving the review data. If the seller identifier is not supplied, run AmazonSellerManagementGetProfileBySellerId before anything else to acquire the necessary seller identification from profile details. Use this operation for monitoring review trends, analyzing customer feedback, and supporting strategic decisions on seller performance."
+  }
+]

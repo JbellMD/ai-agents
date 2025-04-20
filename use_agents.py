@@ -170,7 +170,13 @@ def main():
     
     # Find our agents by name
     news_agent_unloaded = next((a for a in agents if "news & market" in a.name.lower()), None)
-    zillow_agent_unloaded = next((a for a in agents if "zillow" in a.name.lower()), None)
+    
+    # Find the FIXED Zillow agent
+    zillow_agent_unloaded = next((a for a in agents if "zillow" in a.name.lower() and "fixed" in a.name.lower()), None)
+    if not zillow_agent_unloaded:
+        # Fallback to any Zillow agent if fixed version not found
+        zillow_agent_unloaded = next((a for a in agents if "zillow" in a.name.lower()), None)
+        print("Note: Using original Zillow agent as fixed version not found")
     
     # Run the News & Market Analysis Agent
     if news_agent_unloaded:
@@ -186,16 +192,27 @@ def main():
     
     # Run the Zillow Real Estate Agent
     if zillow_agent_unloaded:
-        print_box("USING ZILLOW AGENT", "Starting Zillow Real Estate Agent execution")
+        print_box("USING ZILLOW AGENT", f"Starting {zillow_agent_unloaded.name} execution")
         run_agent(
             zillow_agent_unloaded, 
             xpander_client, 
             openai_client,
-            """Find properties in Seattle, WA with the following criteria:
-            - Using lowercase 'apartment' for home_type
-            - 2 bedrooms minimum
-            - Under $800,000
-            Please analyze their investment potential and provide recommendations."""
+            """I'm looking for apartment properties in Seattle, WA with these criteria:
+            - At least 2 bedrooms
+            - Maximum price of $800,000
+            
+            IMPORTANT: When using the Create Zillow Search URL operation, please use this EXACT FORMAT:
+            {
+              "queryParams": {
+                "location": "Seattle, WA",
+                "home_type": "apartment",
+                "beds": 2,
+                "price_max": 800000
+              }
+            }
+            
+            Please analyze the investment potential of any properties you find.
+            """
         )
     else:
         print("❌ Zillow Real Estate Agent not found. Run create_agents.py first.")

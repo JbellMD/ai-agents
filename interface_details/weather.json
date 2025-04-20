@@ -1,0 +1,137 @@
+[
+  {
+    "name": "Get All Predefined Alerts",
+    "id": "67e2e07a99f31f9c55d127bd",
+    "description": "Retrieves a list of all pre-defined alerts in the system. This operation provides an essential overview of available alert identifiers and configurations needed for weather monitoring and notifications. It serves as the foundational step for obtaining alert IDs that are required by subsequent operations such as retrieving alert details, updating configurations, or linking locations to an alert. No prerequisites are needed for this operation; however, run this first when other operations require a valid alert identifier. "
+  },
+  {
+    "name": "Create New Alert",
+    "id": "67e2e07a99f31f9c55d127be",
+    "description": "Creates a new custom alert in the system. This operation allows you to define an alert that is not available in the pre-defined list, ensuring that you can customize alert parameters based on specific weather conditions. To avoid duplicating existing alerts, if the alert identifier or related details are not provided, run TomorrowAlertSystemGetAllPredefinedAlerts before initiating this operation. After creation, you can further associate locations using the dedicated linking operation for comprehensive alert management. "
+  },
+  {
+    "name": "Get Alert Details by ID",
+    "id": "67e2e07a99f31f9c55d127bf",
+    "description": "Retrieves comprehensive details for a particular alert by using its unique alert identifier. If the alert ID is missing, run TomorrowAlertSystemGetAllPredefinedAlerts before anything else to obtain this necessary identifier. The operation returns detailed configuration data, including parameters and conditions that define the alert, allowing you to review its settings before making further modifications or integrations with other alert management operations. "
+  },
+  {
+    "name": "Update Alert Details by ID",
+    "id": "67e2e07a99f31f9c55d127c0",
+    "description": "Updates the configuration and parameters of a specified alert using its unique alert identifier. If the alert ID is not provided, run TomorrowAlertSystemGetAllPredefinedAlerts first to secure the correct identifier from the existing alerts. After updating, it is advisable to run the operation that fetches alert details to verify that changes have been correctly applied. This ensures that the alert's settings are effectively modified to meet current monitoring requirements. "
+  },
+  {
+    "name": "Delete Alert by ID",
+    "id": "67e2e07a99f31f9c55d127c1",
+    "description": "Deletes a specific alert from the system using its unique alert identifier. If the alert ID is not provided, run TomorrowAlertSystemGetAllPredefinedAlerts before anything else to obtain the correct alert identifier from the list of available alerts. Additionally, if you need to verify which locations are associated with the alert before deletion, consider running the operation that retrieves linked locations. This process ensures that the alert and its associations are accurately identified before permanent removal. "
+  },
+  {
+    "name": "Activate Alert by ID",
+    "id": "67e2e07a99f31f9c55d127c2",
+    "description": "Activates a specific alert within the system using its unique alert identifier. If the alert ID is absent, run TomorrowAlertSystemGetAllPredefinedAlerts before initiating this operation to obtain the necessary identifier. Activating an alert enables it for real-time weather monitoring and notifications. For further validation of the alert\u2019s active state and its associated locations, you may consider using the operation designed to retrieve linked locations after activation. "
+  },
+  {
+    "name": "Deactivate Alert by ID",
+    "id": "67e2e07a99f31f9c55d127c3",
+    "description": "Deactivates an active alert using its unique alert identifier. If the alert ID is not provided, run TomorrowAlertSystemGetAllPredefinedAlerts before proceeding to acquire the correct alert identifier. This operation temporarily disables the alert, making it suitable for seasonal adjustments or system maintenance while preserving its configuration for future reactivation. Optionally, verifying associated linked locations ensures that deactivation does not unintentionally affect other system components. "
+  },
+  {
+    "name": "Get Linked Locations by Alert ID",
+    "id": "67e2e07a99f31f9c55d127c4",
+    "description": "Retrieves a list of locations linked to a specific alert using its unique alert identifier. If the alert ID is not provided, run TomorrowAlertSystemGetAllPredefinedAlerts before anything else to obtain the required identifier. This operation is essential for confirming which locations are associated with an alert, thereby ensuring that the geographic or system coverage is correctly maintained. It is a necessary step for monitoring and managing alert associations effectively. "
+  },
+  {
+    "name": "Link Locations to Alert by ID",
+    "id": "67e2e07a99f31f9c55d127c5",
+    "description": "Associates specific locations to an alert using its unique alert identifier. If the alert ID is not provided, run TomorrowAlertSystemGetAllPredefinedAlerts first to secure it from the list of available alerts. Additionally, if location identifiers are missing, you should retrieve them using an appropriate operation dedicated to location data before proceeding. This operation consolidates alert management by ensuring that locations are properly linked for targeted weather notifications. "
+  },
+  {
+    "name": "Unlink Locations from Alert by ID",
+    "id": "67e2e07a99f31f9c55d127c6",
+    "description": "Dissociates previously linked locations from a specific alert using its unique alert identifier. If the alert ID is absent, run TomorrowAlertSystemGetAllPredefinedAlerts before beginning to obtain the correct identifier. Furthermore, if you are unsure about the current associations, run the operation that retrieves linked locations first to confirm existing links. This ensures that the removal of location associations is accurately executed without compromising the alert configuration."
+  },
+  {
+    "name": "Get Filtered Events",
+    "id": "67e2e07a99f31f9c55d127c7",
+    "description": "Retrieves event records with optional filtering by buffer, location, and insights. This operation provides a thorough extraction of event details intended to support crucial planning, scheduling, and analytical workflows in event management. It is designed to deliver a comprehensive view of events when specific attributes such as unique event identifiers or particular event metrics are not directly supplied. If an essential parameter like the event ID or detailed event data is missing, run TomorrowEventManagementGetEventsFilteredByParameters before any dependent operations to acquire all necessary details. The resulting information assists in informed decision-making by offering structured data that bridges gaps in event information, thereby enhancing the continuity and reliability of subsequent event-related processes. "
+  },
+  {
+    "name": "Submit New Event Data",
+    "id": "67e2e07a99f31f9c55d127c8",
+    "description": "Submits new event-related data, including weather conditions and location parameters, to the central event management system. This operation is vital for creating or updating event records, ensuring that all significant details are accurately recorded for effective tracking and status updates. If the required location information is not provided, run GetAllPredefinedLocations before proceeding to obtain valid location details; if other critical event details such as weather data or event identifiers are missing, secure them through the appropriate data retrieval operation first. The consolidated data from this submission ensures precise monitoring and analysis, thereby fostering a cohesive workflow in event management operations."
+  },
+  {
+    "name": "Get All Predefined Insights",
+    "id": "67e2e07a99f31f9c55d127c9",
+    "description": "Retrieves a comprehensive list of all predefined insights configured in the system. This operation outputs an aggregated collection of insight identifiers and summary details essential for subsequent processes that require a valid insight identifier. If an operation such as retrieving, updating, or deleting a specific insight does not include the necessary insight identifier, run TomorrowInsightServiceGetAllPredefinedInsights before anything else to obtain the available insight IDs. This operation serves as the foundation for selecting the appropriate insight for further actions, ensuring that the correct identifier is referenced and that the workflow remains consistent across all insight-related tasks. "
+  },
+  {
+    "name": "Create New Insight",
+    "id": "67e2e07a99f31f9c55d127ca",
+    "description": "Creates a new custom insight within the system by allowing the definition of unique logic and parameters that are not covered by the predefined list. Although there are no strictly mandatory fields listed for creation, it is recommended to run TomorrowInsightServiceGetAllPredefinedInsights first if you are uncertain about existing insights, so you can avoid duplicating an insight already present in the system. If specific custom details such as the insight name and logic are missing when initiating this operation, verify and retrieve the necessary context from the list of predefined insights. This process ensures that every new insight is unique and properly integrated into the system. "
+  },
+  {
+    "name": "Get Insight Details by ID",
+    "id": "67e2e07a99f31f9c55d127cb",
+    "description": "Retrieves detailed information for a specific insight based on its unique identifier. This operation requires a valid insight ID to fetch comprehensive details such as configuration settings, logic parameters, and other relevant properties. In the event that the insight ID is not provided, run TomorrowInsightServiceGetAllPredefinedInsights before anything else to obtain the necessary identifier from the pool of available insights. This process ensures that all unique and critical attributes of an insight are accessible for review before performing further modifications or integrations. It is a key operation to understand the complete configuration of an insight for subsequent actions. "
+  },
+  {
+    "name": "Update Insight Details by ID",
+    "id": "67e2e07a99f31f9c55d127cc",
+    "description": "Updates the details of an existing insight using its unique identifier, enabling modifications to essential parameters, logic configurations, and other significant properties. This operation mandates the provision of a valid insight ID to correctly identify which insight should be updated. If the insight ID is missing, run TomorrowInsightServiceGetAllPredefinedInsights before anything else to acquire the appropriate identifier from the list of available insights. After the update, it is advisable to confirm the changes by retrieving the detailed information of the insight, ensuring that all modifications have been applied accurately and that the updated insight integrates seamlessly with other dependent operations in the system."
+  },
+  {
+    "name": "Delete Insight by ID",
+    "id": "67e2e07a99f31f9c55d127cd",
+    "description": "Deletes a specific insight from the system using its unique identifier. This operation requires that a valid insight ID be provided to ensure the correct insight is targeted for removal. If the insight ID is not supplied, run TomorrowInsightServiceGetAllPredefinedInsights before anything else to retrieve the list of available insight identifiers. This operation permanently removes the insight from the system, so it is important to confirm that the insight is not currently associated with any alerts or events that could be affected. Verify all required details and dependencies before executing this operation to guarantee a safe and intentional deletion. "
+  },
+  {
+    "name": "Get All Predefined Locations",
+    "id": "67e2e07a99f31f9c55d127ce",
+    "description": "Retrieves a comprehensive list of all predefined locations available in the system. This operation gathers essential information including unique location identifiers and geographic coordinates that serve as the foundation for all subsequent location management tasks. Its execution is recommended when location details are uncertain or incomplete, as it provides a clear reference list to verify and obtain valid data. The operation does not require any input fields and is designed to support effective decision making for updates, tagging, or deletions. Ensure that if any further operations lack accurate location information, you run this operation first to guarantee consistent and reliable data for processing. "
+  },
+  {
+    "name": "Create New Location",
+    "id": "67e2e07a99f31f9c55d127cf",
+    "description": "Creates a new custom location in the system based on provided details such as the location name and precise geographic coordinates. This operation allows the addition of locations that are not already included in the predefined list. It is critical to have accurate and complete location details prior to executing this operation in order to avoid redundancy. If the essential location information is missing, you are advised to run TomorrowLocationManagementGetAllPredefinedLocations before anything else to retrieve and verify existing location identifiers. This process ensures that new entries are truly unique and supports a robust, up-to-date location repository for future weather and data analyses. "
+  },
+  {
+    "name": "Attach Tags to Locations",
+    "id": "67e2e07a99f31f9c55d127d0",
+    "description": "Attaches designated tags to specific locations to facilitate systematic classification and easier data management. This operation enhances organization by enabling users to group locations with similar attributes for filtering and analysis. Prior to execution, it is important to ensure that accurate location identifiers are available. If the necessary location IDs are not provided, you should run TomorrowLocationManagementGetAllPredefinedLocations before anything else to obtain the required information. This verification step helps maintain data consistency and supports efficient categorization within the location management system. "
+  },
+  {
+    "name": "Detach Tags from Locations",
+    "id": "67e2e07a99f31f9c55d127d1",
+    "description": "Removes specified tags from chosen locations to allow for updated or reorganized categorization of data. This operation is useful for reversing or modifying previous tagging decisions, ensuring that location classifications remain current and accurate. It is essential to verify the correct association between locations and their tags before detachment. If the relevant location identifiers or tag associations are missing, run TomorrowLocationManagementGetAllPredefinedLocations before anything else to confirm accurate details. This measured approach ensures that tag removal is performed correctly while preserving the integrity of your location-based data. "
+  },
+  {
+    "name": "Get Location Details by ID",
+    "id": "67e2e07a99f31f9c55d127d2",
+    "description": "Retrieves detailed information for a specific location using its unique identifier. The detailed output includes geographic coordinates, the name of the location, and other important attributes essential for comprehensive management and analysis. In situations where the location identifier is missing or unverified, you should run TomorrowLocationManagementGetAllPredefinedLocations before anything else to obtain the necessary id. This operation is fundamental for confirming accurate location data and supports subsequent updates or adjustments within the management workflow. "
+  },
+  {
+    "name": "Update Location Name by ID",
+    "id": "67e2e07a99f31f9c55d127d3",
+    "description": "Updates the name of an existing location by requiring both a valid location identifier and the new location name. This operation is critical for maintaining accurate and current naming conventions across the system. Both pieces of information must be provided to ensure a successful update. If either the location identifier or the new name is missing, run TomorrowLocationManagementGetAllPredefinedLocations before anything else to confirm the correct location id. Once verified, this update operation will effectively change the location name while preserving all other associated attributes."
+  },
+  {
+    "name": "Delete Location by ID",
+    "id": "67e2e07a99f31f9c55d127d4",
+    "description": "Permanently deletes a specific location from the system by using its unique identifier. This operation removes all associated details including geographic coordinates and related metadata. Because deletion is irreversible and can impact connected alerts or events, it is crucial to provide a valid location identifier. If the identifier is not provided or is ambiguous, run TomorrowLocationManagementGetAllPredefinedLocations before anything else to retrieve the correct location id. Following proper verification, this deletion operation can be safely executed to maintain overall system integrity. "
+  },
+  {
+    "name": "Get Weather Data by Interval",
+    "id": "67e2e07a99f31f9c55d127d5",
+    "description": "Accesses detailed weather timeline data over defined intervals, delivering comprehensive information based on specified parameters such as wind speed, precipitation levels, temperature metrics, and additional weather indicators. This operation requires several critical inputs: a start time and an end time in ISO 8601 format, a valid location identifier (which may be a comma-separated set of geographic coordinates or a predefined location ID), selected data fields, and designated timesteps that set the measurement intervals. If the location parameter is omitted, run TomorrowLocationManagementGetAllPredefinedLocations before anything else to retrieve the necessary location identifiers and coordinates. Ensuring that the time inputs and specified fields adhere to operational guidelines will facilitate precise data retrieval, support robust weather analysis, and underpin advanced forecasting and decision-making processes in weather-dependent scenarios."
+  },
+  {
+    "name": "Get Weather Forecast by Location",
+    "id": "67e2e07a99f31f9c55d127d6",
+    "description": "Fetches a detailed weather forecast for a specified location over defined time intervals. This operation requires two key inputs: a valid location and timesteps that indicate the forecast intervals (such as hourly, daily, or minutely segments). If the location information is missing, run TomorrowLocationManagementGetAllPredefinedLocations before anything else to acquire the necessary location identifiers and geographic coordinates. This forecast operation is essential for planning outdoor activities, travel arrangements, and event scheduling by providing timely and accurate predictions. Ensure that timesteps are properly specified to achieve the desired level of forecast granularity and period coverage. "
+  },
+  {
+    "name": "Get Recent Weather History",
+    "id": "67e2e07a99f31f9c55d127d7",
+    "description": "Retrieves comprehensive historical weather data for a specified location during defined time intervals. This operation is designed to support climate analysis, event planning, and historical studies by requiring precise geographic coordinates and clear timesteps that delineate the desired historical intervals. In case the location data is not provided, run TomorrowLocationManagementGetAllPredefinedLocations before proceeding to obtain the necessary location identifiers and coordinates. This operation enables a thorough understanding of past weather patterns by combining accurate historical data with forecast information, thereby facilitating detailed comparative analyses and strategic planning."
+  }
+]

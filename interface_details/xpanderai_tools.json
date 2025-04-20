@@ -1,0 +1,77 @@
+[
+  {
+    "name": "Fetch Company Details by Query",
+    "id": "67f7861bf9348bac14a755fd",
+    "description": "Fetches detailed company information through a two-step process. Initially, it searches for a company using the supplied query to obtain a unique company identifier; then it retrieves comprehensive data including the official company name, a brief description, and key details such as the founded year, headquarters location, and main industry sector. If query is not provided, run XpanderNewsInsightsFetchLatestNews before anything else to collect current market data which may assist in formulating an effective search term. This dependency ensures that even when the primary input is missing, users can leverage recent news data to derive the needed company details. The thorough evaluation provided by this operation is crucial for ensuring that subsequent processes have access to verified and complete company information."
+  },
+  {
+    "name": "Fetch Latest News",
+    "id": "67f7861bf9348bac14a755fe",
+    "description": "Fetches the latest news using Currents API. This operation is structured to retrieve current headlines and breaking news from a diverse range of news sources without requiring any additional input parameters. It is specifically designed for direct use in news insights workflows where up-to-date information is critical. As there are no mandatory search or query parameters, this endpoint operates with minimal dependencies. In scenarios where further details may be needed in subsequent operations, the output of this function can serve as a foundational reference. This simplicity and immediacy make the operation ideal for obtaining a rapid and consistent news feed, ensuring that current news is accessible without requiring preliminary operations. "
+  },
+  {
+    "name": "Fetch Stock Data by Symbol",
+    "id": "67f7861bf9348bac14a75601",
+    "description": "Retrieves stock data from Alpha Vantage using a provided stock symbol. The stock symbol is essential for this operation. If the stock symbol is not provided, run an external lookup operation to obtain a valid stock symbol before invoking this call. This ensures that the financial data returned is accurate and relevant for subsequent processes."
+  },
+  {
+    "name": "Fetch Tavily AI Insights",
+    "id": "67f7861bf9348bac14a75602",
+    "description": "Fetches insights from Tavily AI by processing provided parameters to generate actionable analytics for news insight purposes. This operation relies primarily on the query parameter as the central search term necessary for the semantic analysis process. If query is not provided, run XpanderNewsInsightsFetchCompanyDetailsByQuery before anything else to retrieve comprehensive company information, which can then be used to derive the correct search term. The output from the dependency operation provides verified company identifiers and names, ensuring that the required analysis is performed in the proper context. This sequence supports trusted analytic results and helps maintain the integrity of the overall news insights workflow by bridging missing input data with accurate company details. "
+  },
+  {
+    "name": "Fetch Sports Events by Week",
+    "id": "67f7861bf9348bac14a75600",
+    "description": "Retrieves sports events for a specified week from AllSportDB. This operation does not require additional input parameters and is self-sufficient for obtaining event schedules. It can be utilized as a foundational call to support other functionalities that integrate event data. If no external event identifiers are provided, this call remains complete and ready for immediate use. "
+  },
+  {
+    "name": "Check Recorder Status",
+    "id": "67f7861bf9348bac14a75606",
+    "description": "Checks the status of a meeting recorder bot and returns available assets if the recording is complete. Recorder id is mandatory. If the recorder id is not provided, run XpanderMeetingManagementCreateRecordingBot before anything else to acquire the recorder id from its response. Use this operation to verify recording progress and gather key meeting details required for subsequent actions."
+  },
+  {
+    "name": "Upload Text to File in S3",
+    "id": "67f7861bf9348bac14a75607",
+    "description": "Uploads text content as a file to S3 and returns a presigned URL. This operation requires two essential inputs: the text content and the file type. The text content should be a clear and valid string representing the data to be stored, and the file type must specify the format (for example, \"txt\"). If the text content isn't provided, ensure that you produce or retrieve the complete text from your available data sources because there is no alternative operation within this API group to supply it. If the file type is missing, verify and supply the appropriate file format using your standard file conventions. Both fields are critical leaves that directly influence the output URL generation, so check and validate these fields before invoking this service to ensure a seamless file upload process. "
+  },
+  {
+    "name": "Upload File to S3 with Multipart Form",
+    "id": "67f7861bf9348bac14a75608",
+    "description": "Uploads a file using a multipart/form-data request to Amazon S3 and returns a presigned URL for immediate access. This operation is vital in document transformation workflows where files need to be securely stored before further processing. The required file must be explicitly provided in the request payload. If the file is not included, there is no automatic API to source it; you must obtain the file through your local file system or alternative file collection process before invoking this upload function. This endpoint underpins subsequent document processing actions by ensuring reliable file storage and easy retrieval of the access URL for later tasks. "
+  },
+  {
+    "name": "Send Email with Content",
+    "id": "67f7861bf9348bac14a7560a",
+    "description": "Transmits an email with formatted HTML content and a clearly defined subject line. This operation requires two critical input fields: the email subject and its HTML body content. The subject establishes the main topic of the email, while the HTML body delivers a rich, multimedia message that is essential for clear communication. If the subject is not provided, then before proceeding, you must retrieve or generate a suitable email title using your content creation process. Likewise, if the HTML body content is missing, ensure that you obtain or generate the detailed message content by referring to your content management guidelines. This operation is integral to messaging workflows that depend on accurate email notifications, confirmations, or updates and must be executed only after verifying that all required information is complete and validated. "
+  },
+  {
+    "name": "Convert Markdown to PDF",
+    "id": "67f7861bf9348bac14a7560b",
+    "description": "Converts markdown formatted text into a finalized PDF document, seamlessly bridging simple text input with professional-grade output for dissemination or archival. The operation demands that markdown text be provided in the payload, formatted correctly to ensure accurate conversion. If the markdown text is missing, run XpanderDocumentTransformationPerformOcrOnFileUrl to extract textual content from an uploaded document, then transform the extracted text into markdown format before retrying this conversion process. This conversion function is integral for automating workflows that require document preparation and correct formatting, streamlining content management and distribution. "
+  },
+  {
+    "name": "Perform OCR on File URL",
+    "id": "67f7861bf9348bac14a7560c",
+    "description": "Executes optical character recognition on a document available at a supplied URL, extracting text and detecting language orientation to support diverse file formats such as PDF, DOCX, XLSX, HTML, and images. It is an essential component for content extraction in document transformation pipelines, facilitating subsequent operations like file conversion or detailed text analysis. The file URL must be provided and be correctly formatted. If the file URL is not available, run XpanderDocumentTransformationConvertMarkdownToPdf after ensuring the source document is first uploaded and processed via a file upload service to generate an accessible URL, thereby enabling effective OCR execution as part of your automated workflow."
+  },
+  {
+    "name": "Fetch Company Mentions on Social Media",
+    "id": "67f7861bf9348bac14a755ff",
+    "description": "Fetches mentions of a company on social media using Brandwatch API. This operation is designed to search for and retrieve social media mentions that reference a specific company by using a provided query as the key search term. The query parameter is essential to filter results and ensure accuracy in the mentions output. If query is not provided, run XpanderNewsInsightsFetchCompanyDetailsByQuery before anything else to obtain detailed company information including company identifiers and names that aid in formulating a proper search term. This dependency ensures that users have the verified company details necessary to execute the mentions search reliably. It is advisable to confirm that the required query is available to support a streamlined social insights retrieval process. "
+  },
+  {
+    "name": "Shorten URL with Expiration",
+    "id": "67f7861bf9348bac14a75603",
+    "description": "Provides a simplified method to shorten a provided URL, returning its abbreviated version that expires after 30 days. This operation is vital within URL management workflows by ensuring that you have an efficient, condensed URL available for subsequent digital processes. It specifically requires a full URL input. If the URL parameter isn't provided, note that there are no alternative dependency operations available in this group to automatically supply the required URL; therefore, ensure the URL is directly obtained from prior validated sources before invoking this operation. Utilize this service when a shortened URL is essential for streamlining processes such as digital communications, redirection tasks, or URL tracking within broader application workflows. Be sure to verify and supply a complete and accurate URL to achieve a successful and functional short URL result."
+  },
+  {
+    "name": "Transcribe Audio Using URL",
+    "id": "67f7861bf9348bac14a75604",
+    "description": "Transcribes audio content by accepting either a downloadable link to an audio file or a directly uploaded file, and then returns fully transcribed text using the OpenAI API. This endpoint is designed for clear and reliable conversion of spoken language into written text, serving as a crucial component for applications such as content analysis, meeting transcription, and media processing. As no additional parameters are required for this operation, it functions as an independent process within the audio-processing suite. Ensure the audio input provided is valid and accessible to avoid incomplete or erroneous results. If the audio input is not correctly supplied, transcription accuracy may be compromised, and verification of the audio resource is advised. Use this operation to seamlessly convert audio data into documented text without relying on preliminary operations."
+  },
+  {
+    "name": "Create Meeting Recording Bot",
+    "id": "67f7861bf9348bac14a75605",
+    "description": "Creates a new recording bot to capture a video meeting and returns a unique recorder ID. Meeting url is a required field. If the meeting url is not provided, run XpanderMeetingManagementCheckRecorderStatus before anything else to retrieve the meeting url from its output. Use this operation to initiate recording and obtain essential recorder details that support further meeting management tasks. "
+  }
+]

@@ -57,23 +57,39 @@ def main():
     try:
         # Create the agent with minimal parameters
         zillow_agent = client.agents.create(
-            name="Zillow Real Estate Agent"
+            name="Zillow Real Estate Agent (Fixed)"
         )
         print(f"Created agent: {zillow_agent.name} with ID: {zillow_agent.id}")
         
         # After creation, set the instructions with updated parameter guidance
         zillow_agent.instructions.general = """
-        You are a Zillow Real Estate Agent that combines property data with weather information.
+        You are a Zillow Real Estate Agent that helps users find and analyze properties.
         
-        IMPORTANT - When using Zillow search parameters:
-        1. Use lowercase for home_type values: 'apartment' (not 'Apartments'), 'house', 'condo', etc.
-        2. For location, use standard formats like 'Seattle, WA' or just city names like 'Seattle'
-        3. Make sure beds and baths are provided as numbers (integers), not strings
-        4. For price parameters, ensure they are numeric values
-        5. If search doesn't return results, try simplifying parameters (just location first)
+        IMPORTANT ZILLOW API NOTES:
+        1. For 'Create Zillow Search URL', use ONLY these parameters (all others will fail):
+           - ALWAYS place parameters in 'queryParams', NOT 'bodyParams'
+           - Use 'location' with values like 'Seattle, WA' or 'New York, NY'
+           - Use lowercase 'home_type' with values like 'apartment', 'house', 'condo'
+           - For parameters like 'beds', 'baths', use numeric values (2 not "2")
+           - For price ranges, use 'price_min' and 'price_max' with numeric values
+
+        2. If search fails with multiple parameters, simplify by using ONLY 'location' first
+        
+        3. EXACT FORMAT EXAMPLE (copy this structure exactly):
+           {
+             "queryParams": {
+               "location": "Seattle, WA",
+               "home_type": "apartment",
+               "beds": 2,
+               "price_max": 800000
+             }
+           }
+
+        4. Always verify that the returned URL is not empty before proceeding
         """
+        
         zillow_agent.instructions.goal = "Help users find properties that match their criteria and provide analysis on investment potential."
-        zillow_agent.instructions.role = "Search for properties, analyze investment potential, and provide recommendations based on weather and market data."
+        zillow_agent.instructions.role = "Search for properties with precise parameter formats, analyze investment potential, and provide recommendations."
         zillow_agent.update()
         
         # Retrieve available interfaces

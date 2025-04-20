@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Get Available Filter Options",
+    "id": "67e2e04bf6d9734e27f2cd6c",
+    "description": "Retrieves available filter options for digital entities such as websites, apps, and browsers using precise filter types to obtain country codes and category IDs essential for refined searches. This operation requires the filter option type as an input. If the filter type is not provided, run SimilarWebAutocompleteGetWebsiteAndAppSuggestions before anything else to obtain the necessary type details, IDs, and related metadata. Ensuring that this dependency is met will prepare the required input for effective configuration of advanced search filters in market research and competitive analysis workflows. Execute this step first to create a streamlined process and maintain data consistency for all follow-up operations. "
+  },
+  {
+    "name": "Fetch App Store Data by App ID",
+    "id": "67e2e04bf6d9734e27f2cd6d",
+    "description": "Fetches detailed analytics data for a specific App Store application. This operation delivers comprehensive insights including performance metrics, user ratings, engagement details, and ranking information essential for competitive analysis and targeted app optimization. The input_required field is the App Store app identifier (app_id). If the app id is not provided, run SimilarWebAutocompleteGetWebsiteAndAppSuggestions before anything else to obtain the correct App Store app id from the suggestions list. Ensure that the proper app identifier is acquired using the autocomplete service so that accurate performance data can be retrieved for informed decision-making and market analysis. "
+  },
+  {
+    "name": "Fetch Google Play Data by App ID",
+    "id": "67e2e04bf6d9734e27f2cd6e",
+    "description": "Retrieves comprehensive analytics data for a specific Google Play application. It offers valuable insights such as performance trends, user ratings, engagement metrics, and ranking details necessary for monitoring app progress and conducting competitive benchmarking in the Android market. The required input field is the Google Play app identifier (app_id). If the app id is not provided, run SimilarWebAutocompleteGetWebsiteAndAppSuggestions before anything else to acquire the correct Google Play app id from the suggestions list. Secure the proper app identifier to ensure reliable results and support effective digital market analysis. "
+  },
+  {
+    "name": "Get Website and App Suggestions",
+    "id": "67e2e04bf6d9734e27f2cd6f",
+    "description": "Provides autocomplete suggestions for websites and apps by returning essential digital entity identifiers and metadata. This operation retrieves critical information such as website names, descriptions, images, and app details which are often required in subsequent data retrieval or analysis tasks involving digital market research. Even though no parameters are mandatory for this operation, it serves as an indispensable preliminary step when later operations need verified identifiers or detailed digital profiles. If the required digital entity identifiers are not directly available in downstream processes, run SimilarWebAutocompleteGetWebsiteAndAppSuggestions first to obtain the missing website or app details necessary for a seamless continuation in your workflow."
+  },
+  {
+    "name": "Get Market Share Data by Platform Type",
+    "id": "67e2e04bf6d9734e27f2cd70",
+    "description": "Delivers comprehensive market share data for digital platforms including browsers, search engines, and other technology interfaces. This operation requires the filter type to specify the desired segment for analysis. If the filter type is missing, run GetAvailableFilterOptions before anything else to secure the necessary parameter that provides critical insight into current market dynamics. The operation outputs detailed data such as current market leaders, country-specific leader breakdowns, and historical trends, making it indispensable for competitive analysis, market entry planning, and strategy development. Ensure that the essential filter type parameter is established through the recommended preliminary operation for accurate market assessments."
+  },
+  {
+    "name": "Get Top Apps List by Store",
+    "id": "67e2e04bf6d9734e27f2cd71",
+    "description": "Generates a ranking list of top applications available on either the Apple App Store or Google Play Store, offering critical insights into market trends and competitive app performance. This operation requires the store parameter to be explicitly set to indicate the target marketplace. If the store parameter is not provided, run SimilarWebFilterOptionsManageGetAvailableOptions before anything else to retrieve valid store options that can be used to identify the appropriate market context. By following this dependency, you ensure the retrieval of accurate ranking metrics, including publisher details, category leaders and ranking changes, thereby supporting an informed mobile app market analysis. "
+  },
+  {
+    "name": "Get Global or Country Websites Rankings",
+    "id": "67e2e04bf6d9734e27f2cd72",
+    "description": "Provides a comprehensive list of top-ranking websites at a global scale or filtered by specific country or category. This operation delivers essential details including domain names, traffic metrics, and ranking information which are pivotal for market research and competitive benchmarking in digital markets. Although it does not require explicit inputs, refined filter criteria such as country or category can enhance the insightfulness of the results. If the country or category information is not provided, run GetAvailableFilterOptions before anything else to obtain the valid filter values needed for more precise analysis. The resulting data may be further combined with other analytics functions to derive deeper insights into market trends and competitor performance. "
+  },
+  {
+    "name": "Get Websites Ranking by Category",
+    "id": "67e2e04bf6d9734e27f2cd73",
+    "description": "Delivers a detailed ranking list of websites within a specific category by providing key metrics such as bounce rates, rank changes, and pages per visit. This operation is designed for users performing thorough analysis of online market segments and is valuable for competitive benchmarking within chosen industries. Although no mandatory input parameters are enforced, the category identifier is crucial for tailored results. If the category information is missing, run GetAvailableFilterOptions before anything else to secure the appropriate category IDs required for accurate evaluations. The returned statistics support strategic decision making and performance optimization by linking in-depth traffic and engagement data with industry-specific insights. "
+  },
+  {
+    "name": "Get Website Analytics by Domain",
+    "id": "67e2e04bf6d9734e27f2cd74",
+    "description": "Provides extensive analytics for a specific website domain by delivering detailed insights into traffic sources, user demographics, engagement metrics, and competitive positioning. This operation is central for professionals seeking to conduct a deep analysis of website performance and digital strategy. The website domain name is a mandatory parameter needed to generate a full spectrum of analytic data. If the domain is not provided, run GetSuggestionsForWebsitesAndApps before anything else to retrieve the correct domain information that will facilitate comprehensive analysis. The generated report offers actionable intelligence that supports competitive benchmarking and strategic digital marketing decisions."
+  }
+]

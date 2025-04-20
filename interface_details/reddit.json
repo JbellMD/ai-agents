@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Get Comments by Post ID",
+    "id": "67e2de9399f31f9c55d127b2",
+    "description": "Retrieves comments from a specified Reddit post using the provided post identifier. This operation collects complete comment data including unique comment identifiers, text content, creation dates, scores, and associated user details essential for conversation analysis and engagement tracking. If the post identifier isn't provided, run RedditPostManagementSearchPostsByQuery before anything else to obtain the required post identifier from a comprehensive post search. This preliminary step ensures that the subsequent comment retrieval is accurate and complete, supporting reliable workflows for discussion monitoring and sentiment evaluation. Supply the proper post identifier and follow the recommended sequence to guarantee data integrity and effective analysis. "
+  },
+  {
+    "name": "Search Comments by Query",
+    "id": "67e2de9399f31f9c55d127b3",
+    "description": "Searches for Reddit comments based on a given keyword or phrase to extract relevant comment identifiers, text content, and metadata such as creation dates, parent references, and score metrics. This operation is fundamental for obtaining comment details that might be necessary for later processes and analysis. It is essential to include a valid search keyword; if the relevant comment identifier needed by downstream operations is missing, run this operation first to derive the necessary comment information from a broader dataset. Adhering to this process ensures that the extracted comment data is comprehensive, thereby supporting robust sentiment analysis, discussion mapping, and content tracking. "
+  },
+  {
+    "name": "Search Media Posts by Query",
+    "id": "67e2de9399f31f9c55d127b4",
+    "description": "Searches for Reddit posts that contain various media elements such as images, videos, and links based on a provided keyword. This operation retrieves key details including the post unique identifier, title, URL, creation date, comment count, and detailed subreddit information like name, description, banner image, icon, and subscriber numbers. The required field query must be supplied; without a valid keyword the operation cannot execute. If the search keyword is missing, obtain the necessary keyword through an independent content discovery process before using this function. The retrieved post data serves as a vital reference for downstream tasks such as media analysis, content curation, and obtaining media post identifiers for further operations."
+  },
+  {
+    "name": "Search Posts by Query",
+    "id": "67e2de9399f31f9c55d127b5",
+    "description": "Searches Reddit posts using a provided keyword or phrase to retrieve comprehensive details such as unique post IDs, titles, creation dates, scores, and other metadata. The keyword is mandatory to perform an effective search across Reddit posts. If the keyword is missing, ensure you obtain a valid search term from a preceding operation or trusted source. Additionally, if essential identifiers like the unique post ID or title needed for further operations (such as detailed post retrieval or content analysis) are not available, run this operation first to secure these attributes. Use this operation for content research, trend analysis, and to ensure all necessary post properties are present before executing other API calls."
+  },
+  {
+    "name": "Search Subreddits by Query",
+    "id": "67e2de9399f31f9c55d127b6",
+    "description": "Performs a search for subreddits using a supplied keyword or phrase and returns a comprehensive list of communities with their unique identifiers, names, banner image URLs, icons, descriptions, and subscriber counts. The required parameter query is essential to trigger this search; without a valid query, the operation cannot proceed as there is no fallback to obtain the search term. This operation is fundamental for community discovery, market research, and content aggregation, serving as a primary step to gather all necessary subreddit details for subsequent tasks. If the query parameter is not provided, supply a proper search keyword immediately, as no alternative operation within this service will auto-generate the missing parameter for you. "
+  },
+  {
+    "name": "Search Users by Query",
+    "id": "67e2de9399f31f9c55d127b7",
+    "description": "Searches for Reddit users by scanning for a specific keyword to locate vital user data such as unique identifier, username, profile URL, karma points, creation date, and avatar icon. This operation relies on the required query keyword to return complete user details, which are essential for any subsequent tasks that depend on precise user information. If the keyword is not provided, you must execute an alternative search operation from the user-research category that delivers a valid keyword input to yield the necessary output user data. Without the query, the operation cannot supply the missing unique identifiers and profile elements critical for influencer analysis and user behavior tracking. Ensure this operation is run before any further actions that require these user-specific details."
+  },
+  {
+    "name": "Get Posts by Subreddit Name",
+    "id": "67e2de9399f31f9c55d127b8",
+    "description": "Retrieves posts from a designated subreddit by using its name and returns detailed information including post unique identifiers, titles, content summaries, creation dates, and various engagement metrics such as comments, shares, score, and upvote ratios, along with additional metadata from the associated subreddit. The required field for this operation is the subreddit name. If the subreddit name is not provided, run RedditSubredditServiceSearchSubredditsByQuery before anything else to obtain the necessary community identifier and related details. This operation is ideal for monitoring community activity, aggregating content for analysis, and supporting further content management processes by ensuring all crucial post and subreddit information is accurately captured."
+  }
+]
